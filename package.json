@@ -17,7 +17,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.4",
-    "ogl": "^1.0.7"
+    "ogl": "^1.0.7",
+    "gsap": "^3.12.5"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

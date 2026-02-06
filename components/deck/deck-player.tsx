@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Grid3X3, ZoomIn, MoreHorizontal, Maximize2 } from "lucide-react";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight, Grid3X3, ZoomIn, MoreHorizontal, Maximize2, Minimize2 } from "lucide-react";
 import { SlideTransition } from "./slide-transition";
 import { HeroSlide } from "./slides/hero-slide";
 import { StatsSlide } from "./slides/stats-slide";
@@ -30,6 +30,26 @@ const TOTAL = SLIDES.length;
 export function DeckPlayer() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isBarVisible, setIsBarVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const toggleFullscreen = useCallback(() => {
+    if (!containerRef.current) return;
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
 
   const goNext = useCallback(() => {
     if (currentIndex >= TOTAL - 1) return;
@@ -60,7 +80,7 @@ export function DeckPlayer() {
   const CurrentSlide = SLIDES[currentIndex].Component;
 
   return (
-    <div className="fixed inset-0 flex flex-col bg-[#151515]">
+    <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#151515]">
       {/* Slide area - no header */}
       <div className="flex-1 relative min-h-0 overflow-hidden">
         <SlideTransition currentIndex={currentIndex} direction={direction}>
@@ -68,8 +88,18 @@ export function DeckPlayer() {
         </SlideTransition>
       </div>
 
-      {/* Canva-like bottom bar */}
-      <div className="flex-shrink-0 h-14 px-4 flex items-center justify-between bg-[#1F2023] border-t border-white/5 relative">
+      {/* Zona inferior: al pasar el cursor aquí se muestra la barra */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-14 overflow-hidden z-20"
+        onMouseEnter={() => setIsBarVisible(true)}
+        onMouseLeave={() => setIsBarVisible(false)}
+      >
+        {/* Canva-like bottom bar: se desliza desde abajo */}
+        <div
+          className={`h-full px-4 flex items-center justify-between bg-[#1F2023] border-t border-white/5 relative transition-transform duration-300 ease-out ${
+            isBarVisible ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
         <div className="flex items-center gap-2 flex-1 min-w-0 justify-start">
           <button
             type="button"
@@ -137,11 +167,17 @@ export function DeckPlayer() {
           </button>
           <button
             type="button"
+            onClick={toggleFullscreen}
             className="p-2 rounded-md text-white/70 hover:text-white hover:bg-white/10 transition-colors"
-            aria-label="Full screen"
+            aria-label={isFullscreen ? "Salir de pantalla completa" : "Pantalla completa"}
           >
-            <Maximize2 className="h-5 w-5" />
+            {isFullscreen ? (
+              <Minimize2 className="h-5 w-5" />
+            ) : (
+              <Maximize2 className="h-5 w-5" />
+            )}
           </button>
+        </div>
         </div>
       </div>
     </div>

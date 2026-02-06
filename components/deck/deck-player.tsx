@@ -10,7 +10,7 @@ import { FeaturesSlide } from "./slides/features-slide";
 import { BrandStorytellingSlide } from "./slides/brand-storytelling-slide";
 import { InsightsSlide } from "./slides/insights-slide";
 import { PricingSlide } from "./slides/pricing-slide";
-import { TestimonialsSlide } from "./slides/testimonials-slide";
+import { ReputationSlide } from "./slides/reputation-slide";
 import { CtaSlide } from "./slides/cta-slide";
 
 const SLIDES = [
@@ -21,7 +21,7 @@ const SLIDES = [
   { id: "brand", Component: BrandStorytellingSlide },
   { id: "insights", Component: InsightsSlide },
   { id: "pricing", Component: PricingSlide },
-  { id: "testimonials", Component: TestimonialsSlide },
+  { id: "reputation", Component: ReputationSlide },
   { id: "cta", Component: CtaSlide },
 ];
 

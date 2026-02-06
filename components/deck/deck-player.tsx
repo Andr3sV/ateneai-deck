@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Grid3X3, ZoomIn, MoreHorizontal, Maximize2, 
 import { SlideTransition } from "./slide-transition";
 import { HeroSlide } from "./slides/hero-slide";
 import { StatsSlide } from "./slides/stats-slide";
-import { LogosSlide } from "./slides/logos-slide";
+import { AeoQuoteSlide } from "./slides/aeo-quote-slide";
 import { FeaturesSlide } from "./slides/features-slide";
 import { BrandStorytellingSlide } from "./slides/brand-storytelling-slide";
 import { InsightsSlide } from "./slides/insights-slide";
@@ -16,7 +16,7 @@ import { CtaSlide } from "./slides/cta-slide";
 const SLIDES = [
   { id: "hero", Component: HeroSlide },
   { id: "stats", Component: StatsSlide },
-  { id: "logos", Component: LogosSlide },
+  { id: "aeo-quote", Component: AeoQuoteSlide },
   { id: "features", Component: FeaturesSlide },
   { id: "brand", Component: BrandStorytellingSlide },
   { id: "insights", Component: InsightsSlide },

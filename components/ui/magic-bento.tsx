@@ -474,20 +474,6 @@ const cardData: BentoCardProps[] = [
   },
   {
     color: 'transparent',
-    title: 'Share of Voice',
-    description: 'Compare your mentions against competitors',
-    label: 'Competition',
-    icon: ShareOfVoiceIcon
-  },
-  {
-    color: 'transparent',
-    title: 'Platform Breakdown',
-    description: 'Track performance across ChatGPT, Gemini, Claude',
-    label: 'Analytics',
-    icon: PlatformBreakdownIcon
-  },
-  {
-    color: 'transparent',
     title: 'Query Patterns',
     description: 'Discover what prompts mention your brand',
     label: 'Patterns',
@@ -985,36 +971,21 @@ const MagicBento: React.FC<BentoProps> = ({
           }
           
           .card-responsive {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(4, 1fr);
             width: 100%;
             margin: 0 auto;
             padding: 0.5rem;
           }
           
-          @media (min-width: 600px) {
+          @media (max-width: 1023px) {
             .card-responsive {
               grid-template-columns: repeat(2, 1fr);
             }
           }
           
-          @media (min-width: 1024px) {
+          @media (max-width: 599px) {
             .card-responsive {
-              grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .card-responsive .card:nth-child(3) {
-              grid-column: span 2;
-              grid-row: span 2;
-            }
-            
-            .card-responsive .card:nth-child(4) {
-              grid-column: 1 / span 2;
-              grid-row: 2 / span 2;
-            }
-            
-            .card-responsive .card:nth-child(6) {
-              grid-column: 4;
-              grid-row: 3;
+              grid-template-columns: 1fr;
             }
           }
           
@@ -1138,8 +1109,8 @@ const MagicBento: React.FC<BentoProps> = ({
           .card-icon-3 {
             width: calc(100% - 3rem);
             max-width: 100%;
-            height: 250px;
-            top: calc(1rem + 1.5rem);
+            height: 5.5rem;
+            top: calc(1.5rem + 1.25rem);
             left: 1.5rem;
             transform: none;
           }
@@ -1677,88 +1648,7 @@ const MagicBento: React.FC<BentoProps> = ({
                     </p>
                   </div>
                   {card.icon && (
-                    <div 
-                      className={`card-icon card-icon-${index}`}
-                      ref={(el) => {
-                        if (el && index === 3) {
-                          // Add sequential random glow animation for Platform Breakdown card
-                          let glowInterval: NodeJS.Timeout | null = null;
-                          let currentIndex = -1;
-                          let isActive = false;
-                          
-                          const handleMouseEnter = () => {
-                            if (isActive) return;
-                            isActive = true;
-                            
-                            const squares = Array.from(el.querySelectorAll('.icon-platform-square')) as HTMLElement[];
-                            
-                            const glowNext = () => {
-                              if (!isActive) return;
-                              
-                              // Remove active class from previous square
-                              if (currentIndex >= 0 && squares[currentIndex]) {
-                                squares[currentIndex].classList.remove('active');
-                              }
-                              
-                              // Pick a random square (different from current)
-                              let nextIndex;
-                              if (squares.length === 1) {
-                                nextIndex = 0;
-                              } else {
-                                do {
-                                  nextIndex = Math.floor(Math.random() * squares.length);
-                                } while (nextIndex === currentIndex);
-                              }
-                              
-                              currentIndex = nextIndex;
-                              squares[currentIndex].classList.add('active');
-                              
-                              // Schedule next glow
-                              const delay = 400 + Math.random() * 300; // 400-700ms between glows
-                              glowInterval = setTimeout(glowNext, delay);
-                            };
-                            
-                            // Start the sequence immediately
-                            glowNext();
-                          };
-                          
-                          const handleMouseLeave = () => {
-                            isActive = false;
-                            if (glowInterval) {
-                              clearTimeout(glowInterval);
-                              glowInterval = null;
-                            }
-                            const squares = el.querySelectorAll('.icon-platform-square');
-                            squares.forEach((square) => {
-                              square.classList.remove('active');
-                            });
-                            currentIndex = -1;
-                          };
-                          
-                          // Also listen on the card itself
-                          const card = el.closest('.card');
-                          if (card) {
-                            card.addEventListener('mouseenter', handleMouseEnter);
-                            card.addEventListener('mouseleave', handleMouseLeave);
-                          }
-                          
-                          el.addEventListener('mouseenter', handleMouseEnter);
-                          el.addEventListener('mouseleave', handleMouseLeave);
-                          
-                          return () => {
-                            if (card) {
-                              card.removeEventListener('mouseenter', handleMouseEnter);
-                              card.removeEventListener('mouseleave', handleMouseLeave);
-                            }
-                            el.removeEventListener('mouseenter', handleMouseEnter);
-                            el.removeEventListener('mouseleave', handleMouseLeave);
-                            if (glowInterval) {
-                              clearTimeout(glowInterval);
-                            }
-                          };
-                        }
-                      }}
-                    >
+                    <div className={`card-icon card-icon-${index}`}>
                       <card.icon className="card-icon-svg" />
                     </div>
                   )}
@@ -1893,27 +1783,7 @@ const MagicBento: React.FC<BentoProps> = ({
                   </p>
                 </div>
                 {card.icon && (
-                  <div 
-                    className={`card-icon card-icon-${index}`}
-                    ref={(el) => {
-                      if (el && index === 3) {
-                        // Add random glow animation for Platform Breakdown card
-                        const handleMouseEnter = () => {
-                          const squares = el.querySelectorAll('.icon-platform-square');
-                          squares.forEach((square) => {
-                            const delay = Math.random() * 1.5;
-                            const duration = 0.3 + Math.random() * 0.4;
-                            (square as HTMLElement).style.animationDelay = `${delay}s`;
-                            (square as HTMLElement).style.animationDuration = `${duration}s`;
-                          });
-                        };
-                        el.addEventListener('mouseenter', handleMouseEnter);
-                        return () => {
-                          el.removeEventListener('mouseenter', handleMouseEnter);
-                        };
-                      }
-                    }}
-                  >
+                  <div className={`card-icon card-icon-${index}`}>
                     <card.icon className="card-icon-svg" />
                   </div>
                 )}

@@ -19,7 +19,7 @@ export function HeroSlide() {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 bg-[#151515]">
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-        <div className="mb-14 md:mb-20 flex items-center justify-center gap-3">
+        <div className="mb-14 md:mb-20 flex flex-col items-center justify-center gap-3">
           <Image
             src="/logoateneaip.svg"
             alt=""
@@ -30,7 +30,7 @@ export function HeroSlide() {
             unoptimized
           />
           <span className="text-[#C2C2E1] font-light text-4xl md:text-5xl lg:text-6xl tracking-tight">
-            Ateneai
+            AteneAI
           </span>
         </div>
         <h1 className="text-xl md:text-2xl lg:text-3xl font-light tracking-tight leading-[1.2] text-center text-white max-w-2xl">

@@ -12,8 +12,7 @@ export function AeoQuoteSlide() {
           transition={{ duration: 0.5 }}
           className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed"
         >
-          2026: AEO no longer says
-          <br />
+          2026: AEO no longer says{" "}
           <span className="inline-block bg-gradient-to-r from-[#C2C2E1] to-white bg-clip-text text-transparent">
             &lsquo;what people search for&rsquo;
           </span>

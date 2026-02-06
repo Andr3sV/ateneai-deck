@@ -9,7 +9,7 @@ import { AeoQuoteSlide } from "./slides/aeo-quote-slide";
 import { FeaturesSlide } from "./slides/features-slide";
 import { BrandStorytellingSlide } from "./slides/brand-storytelling-slide";
 import { InsightsSlide } from "./slides/insights-slide";
-import { BenefitsSlide } from "./slides/benefits-slide";
+import { PricingSlide } from "./slides/pricing-slide";
 import { TestimonialsSlide } from "./slides/testimonials-slide";
 import { CtaSlide } from "./slides/cta-slide";
 
@@ -20,7 +20,7 @@ const SLIDES = [
   { id: "features", Component: FeaturesSlide },
   { id: "brand", Component: BrandStorytellingSlide },
   { id: "insights", Component: InsightsSlide },
-  { id: "benefits", Component: BenefitsSlide },
+  { id: "pricing", Component: PricingSlide },
   { id: "testimonials", Component: TestimonialsSlide },
   { id: "cta", Component: CtaSlide },
 ];

@@ -8,41 +8,47 @@ export function CtaSlide() {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 bg-[#151515]">
       <div className="max-w-2xl mx-auto text-center">
+        {/* Logo igual que en la primera slide */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 flex justify-center"
+          className="mb-14 md:mb-16 flex flex-col items-center justify-center gap-2"
         >
           <Image
-            src="/ateneai-logo-circle.svg"
-            alt="AteneAI"
-            width={80}
-            height={80}
-            className="opacity-90"
+            src="/logoateneaip.svg"
+            alt=""
+            width={200}
+            height={200}
+            className="h-16 md:h-20 w-auto object-contain"
             unoptimized
           />
+          <span className="text-[#C2C2E1] font-light text-3xl md:text-4xl tracking-tight">
+            AteneAI
+          </span>
         </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl md:text-4xl font-light text-white mb-4"
-        >
-          Ready to optimize your brand in AI?
-        </motion.h2>
+        {/* Texto y degradados de la slide AEO */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-[#E0E0E0] mb-10"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-xl md:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-14 md:mb-16"
         >
-          Start monitoring and take control of your narrative.
+          2026: AEO no longer says{" "}
+          <span className="inline-block bg-gradient-to-r from-[#C2C2E1] to-white bg-clip-text text-transparent">
+            &lsquo;what people search for&rsquo;
+          </span>
+          <br />
+          <span className="text-white">It says </span>
+          <span className="inline-block bg-gradient-to-r from-[#C2C2E1] to-white bg-clip-text text-transparent">
+            &lsquo;what they&apos;re going to buy&rsquo;
+          </span>
+          .
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button

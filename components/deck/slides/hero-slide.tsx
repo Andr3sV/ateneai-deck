@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const LightRays = dynamic(() => import("@/components/ui/light-rays"), {
+  ssr: false,
+});
 
 const brands = ["Gemini", "ChatGPT"];
 
@@ -17,8 +22,28 @@ export function HeroSlide() {
   }, []);
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 bg-[#151515]">
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+    <div className="relative w-full h-full bg-[#151515] overflow-hidden">
+      {/* Light rays: capa de fondo, luz desde arriba iluminando todo */}
+      <div className="absolute inset-0 z-[1]">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#C2C2E1"
+          raysSpeed={1}
+          lightSpread={0.5}
+          rayLength={3}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0}
+          distortion={0}
+          pulsating={false}
+          fadeDistance={1}
+          saturation={1}
+          className="absolute inset-0"
+        />
+      </div>
+      {/* Logo, nombre y título encima de los rayos para que la luz los ilumine */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
         <div className="mb-14 md:mb-20 flex flex-col items-center justify-center gap-3">
           <Image
             src="/logoateneaip.svg"
@@ -51,6 +76,7 @@ export function HeroSlide() {
             </AnimatePresence>
           </span>
         </h1>
+        </div>
       </div>
     </div>
   );

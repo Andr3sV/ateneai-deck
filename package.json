@@ -16,7 +16,8 @@
     "lucide-react": "^0.460.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.4",
+    "ogl": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

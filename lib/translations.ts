@@ -141,7 +141,7 @@ export const translations = {
         { label: "Tracking", title: "Seguimiento de citas", description: "Monitoriza las menciones de tu marca en plataformas de IA" },
         { label: "Insights", title: "Análisis de sentimiento", description: "Comprende cómo la IA percibe tu marca" },
         { label: "Patrones", title: "Patrones de consultas", description: "Descubre qué prompts mencionan tu marca" },
-        { label: "Oportunidades", title: "Oportunidades en tiempo real", description: "Gana ventaja sobre tus competidores" },
+        { label: "Oportunidades", title: "Insights accionables", description: "Gana ventaja sobre tus competidores" },
       ],
     },
     brandStorytelling: {

@@ -38,7 +38,6 @@ const slideVariants = {
 export function SlideTransition({
   currentIndex,
   direction,
-  language,
   children,
 }: {
   currentIndex: number;
@@ -49,7 +48,6 @@ export function SlideTransition({
   return (
     <AnimatePresence mode="wait" custom={direction}>
       <motion.div
-        key={`${currentIndex}-${language}`}
         custom={direction}
         variants={slideVariants}
         initial="enter"

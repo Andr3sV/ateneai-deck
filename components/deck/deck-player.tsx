@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2 } from "lucide-react";
 import { SlideTransition } from "./slide-transition";
+import { useLanguage } from "@/lib/language-context";
 import { HeroSlide } from "./slides/hero-slide";
 import { StatsSlide } from "./slides/stats-slide";
 import { AeoQuoteSlide } from "./slides/aeo-quote-slide";
@@ -28,6 +29,7 @@ const SLIDES = [
 const TOTAL = SLIDES.length;
 
 export function DeckPlayer() {
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -83,7 +85,7 @@ export function DeckPlayer() {
     <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#151515]">
       {/* Slide area: padding top en móvil; el scroll lo manejan las slides individuales */}
       <div className="flex-1 relative min-h-0 overflow-hidden max-md:pt-6">
-        <SlideTransition currentIndex={currentIndex} direction={direction}>
+        <SlideTransition currentIndex={currentIndex} direction={direction} language={language}>
           <CurrentSlide />
         </SlideTransition>
       </div>

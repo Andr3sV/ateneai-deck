@@ -4,14 +4,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { LanguageSelector } from "@/components/ui/language-selector";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
 
 const LightRays = dynamic(() => import("@/components/ui/light-rays"), {
   ssr: false,
 });
 
-const brands = ["Gemini", "ChatGPT"];
-
 export function HeroSlide() {
+  const { language } = useLanguage();
+  const brands = translations[language].hero.brands;
+  const tagline = translations[language].hero.tagline;
   const [currentBrandIndex, setCurrentBrandIndex] = useState(0);
 
   useEffect(() => {
@@ -19,7 +23,7 @@ export function HeroSlide() {
       setCurrentBrandIndex((prev) => (prev + 1) % brands.length);
     }, 1800);
     return () => clearInterval(interval);
-  }, []);
+  }, [brands.length]);
 
   return (
     <div className="relative w-full h-full bg-[#151515] overflow-hidden max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
@@ -41,6 +45,18 @@ export function HeroSlide() {
           className="absolute inset-0"
         />
       </div>
+
+      {/* Language selector - esquina superior derecha */}
+      <div className="absolute top-6 right-6 z-20">
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <LanguageSelector />
+        </motion.div>
+      </div>
+
       {/* Logo, nombre y título encima de los rayos para que la luz los ilumine */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
@@ -59,7 +75,7 @@ export function HeroSlide() {
           </span>
         </div>
         <h1 className="text-xl md:text-2xl lg:text-3xl font-light tracking-tight leading-[1.2] text-center text-white max-w-2xl">
-          Become the brand everyone is talking about on
+          {tagline}
           <br />
           <span className="inline-block relative overflow-hidden h-[1.2em] align-middle">
             <AnimatePresence mode="wait">

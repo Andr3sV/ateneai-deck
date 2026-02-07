@@ -2,8 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
 
 export function BrandStorytellingSlide() {
+  const { language } = useLanguage();
+  const t = translations[language].brandStorytelling;
+
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:items-start max-md:pb-24">
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
@@ -13,8 +18,8 @@ export function BrandStorytellingSlide() {
           transition={{ duration: 0.5 }}
           className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2"
         >
-          Take Control of Your
-          <span className="block text-[#C2C2E1]">Brand Storytelling</span>
+          {t.title}
+          <span className="block text-[#C2C2E1]">{t.titleHighlight}</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -22,8 +27,7 @@ export function BrandStorytellingSlide() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-base text-[#E0E0E0] mb-8 max-w-xl"
         >
-          Monitor and optimize how your brand and competitors are positioned
-          across AI platforms
+          {t.description}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -33,7 +37,7 @@ export function BrandStorytellingSlide() {
         >
           <Image
             src="/images/web-page/attributes.png"
-            alt="Brand Storytelling Control Dashboard"
+            alt={t.imageAlt}
             width={1200}
             height={675}
             className="w-full h-auto object-contain"
@@ -46,9 +50,7 @@ export function BrandStorytellingSlide() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-sm text-[#A0A0A0] mt-6 max-w-2xl"
         >
-          Gain complete visibility. <strong className="text-white">Control your narrative</strong> by
-          understanding which themes and attributes are associated with your
-          brand.
+          {t.footer} <strong className="text-white">{t.footerBold}</strong> {t.footerEnd}
         </motion.p>
       </div>
     </div>

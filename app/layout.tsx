@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Providers } from "@/components/providers";
 
 const siteDescription =
   "Become the brand everyone is talking about on ChatGPT and Gemini. We help your brand show up and be recommended in AI chatbots, turning that visibility into intelligence for smarter marketing.";
@@ -31,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-[#151515] text-white overflow-hidden">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -2,66 +2,25 @@
 
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
 
-const plans = [
-  {
-    id: "business",
-    name: "Business",
-    description: "For individuals and small teams getting started with AI search brand tracking.",
-    priceMonthly: "40.83",
-    priceMonthlyOriginal: "49.00",
-    priceYearly: "490.00",
-    showPrice: true,
-    popular: false,
-    features: [
-      { text: "1 Project", included: true },
-      { text: "40 Tracked Prompts (40 AI responses/week per model)", included: true },
-      { text: "Weekly tracking · 5 Competitors", included: true },
-      { text: "Models: ChatGPT, Perplexity, Gemini, Google AI", included: true },
-      { text: "Data exports (CSV, Excel) · Unlimited team", included: true },
-      { text: "Brand sentiment analysis", included: false },
-      { text: "App stores citations · Looker Studio", included: false },
-    ],
-  },
-  {
-    id: "growth",
-    name: "Growth",
-    description: "For growing businesses that need more prompts, team members and support.",
-    priceMonthly: "82.50",
-    priceMonthlyOriginal: "99.00",
-    priceYearly: "990.00",
-    showPrice: true,
-    popular: true,
-    features: [
-      { text: "2 Projects", included: true },
-      { text: "100 Tracked Prompts (100 AI responses/week per model)", included: true },
-      { text: "Weekly tracking · 10 Competitors", included: true },
-      { text: "Brand sentiment analysis · App stores citations", included: true },
-      { text: "Data exports · Unlimited team · Higher priority support", included: true },
-      { text: "Looker Studio connector", included: false },
-    ],
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    description: "For large organizations requiring extensive tracking and premium support.",
-    priceMonthly: null,
-    priceMonthlyOriginal: null,
-    priceYearly: null,
-    showPrice: false,
-    popular: false,
-    features: [
-      { text: "5 Projects", included: true },
-      { text: "300 Tracked Prompts (300 AI responses/week per model)", included: true },
-      { text: "Weekly tracking · 15 Competitors", included: true },
-      { text: "Brand sentiment · App stores · Looker Studio connector", included: true },
-      { text: "Data exports · Unlimited team", included: true },
-      { text: "Support (highest priority)", included: true },
-    ],
-  },
+const PLAN_IDS = ["business", "growth", "enterprise"] as const;
+const PRICES = [
+  { priceMonthly: "40.83", priceMonthlyOriginal: "49.00", priceYearly: "490.00", showPrice: true, popular: false },
+  { priceMonthly: "82.50", priceMonthlyOriginal: "99.00", priceYearly: "990.00", showPrice: true, popular: true },
+  { priceMonthly: null, priceMonthlyOriginal: null, priceYearly: null, showPrice: false, popular: false },
 ];
 
 export function PricingSlide() {
+  const { language } = useLanguage();
+  const t = translations[language].pricing;
+  const plans = t.plans.map((plan, i) => ({
+    id: PLAN_IDS[i],
+    ...plan,
+    ...PRICES[i],
+  }));
+
   return (
     <div className="relative w-full h-full flex items-center justify-center px-4 py-6 bg-[#151515] overflow-auto max-md:items-start max-md:justify-center max-md:pt-8 max-md:pb-24">
       <div className="w-full max-w-5xl mx-auto">
@@ -80,7 +39,7 @@ export function PricingSlide() {
             >
               {plan.popular && (
                 <span className="absolute top-0 right-0 rounded-bl-lg rounded-tr-2xl bg-[#C2C2E1] px-3 py-1 text-xs font-medium text-[#151515]">
-                  Most popular
+                  {t.mostPopular}
                 </span>
               )}
               <h3 className="text-lg font-semibold text-white mb-1">{plan.name}</h3>
@@ -89,12 +48,12 @@ export function PricingSlide() {
                 <>
                   <div className="mb-4">
                     <span className="text-2xl font-bold text-white">{plan.priceMonthly} €</span>
-                    <span className="text-sm text-[#A0A0A0]"> / month</span>
+                    <span className="text-sm text-[#A0A0A0]"> {t.perMonth}</span>
                     <div className="flex items-center gap-2 mt-0.5">
                       <span className="text-xs text-[#606060] line-through">
-                        {plan.priceMonthlyOriginal} €/month
+                        {plan.priceMonthlyOriginal} €{t.perMonth}
                       </span>
-                      <span className="text-xs text-[#A0A0A0]">{plan.priceYearly} €/year</span>
+                      <span className="text-xs text-[#A0A0A0]">{plan.priceYearly} €{t.perYear}</span>
                     </div>
                   </div>
                   <button
@@ -105,19 +64,19 @@ export function PricingSlide() {
                         : "bg-transparent border border-[#C2C2E1]/50 text-white hover:border-[#C2C2E1]"
                     }`}
                   >
-                    Start free trial
+                    {t.startFreeTrial}
                   </button>
                 </>
               ) : (
                 <>
                   <div className="mb-4 min-h-[4.5rem] flex items-center">
-                    <span className="text-lg text-[#A0A0A0]">Custom pricing</span>
+                    <span className="text-lg text-[#A0A0A0]">{t.customPricing}</span>
                   </div>
                   <button
                     type="button"
                     className="w-full py-2.5 rounded-lg text-sm font-medium bg-transparent border border-[#C2C2E1]/50 text-white hover:border-[#C2C2E1] transition-colors"
                   >
-                    Contact us
+                    {t.contactUs}
                   </button>
                 </>
               )}

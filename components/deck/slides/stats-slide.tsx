@@ -27,7 +27,7 @@ const metrics = [
 
 export function StatsSlide() {
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-10 bg-[#151515] overflow-auto">
+    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-10 bg-[#151515] overflow-auto max-md:pb-24">
       <div className="max-w-5xl mx-auto w-full text-center">
         {/* Título y subtítulo */}
         <motion.h2

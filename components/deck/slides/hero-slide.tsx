@@ -22,7 +22,7 @@ export function HeroSlide() {
   }, []);
 
   return (
-    <div className="relative w-full h-full bg-[#151515] overflow-hidden">
+    <div className="relative w-full h-full bg-[#151515] overflow-hidden max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
       {/* Light rays: capa de fondo, luz desde arriba iluminando todo */}
       <div className="absolute inset-0 z-[1]">
         <LightRays

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, Grid3X3, ZoomIn, MoreHorizontal, Maximize2, Minimize2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, Minimize2 } from "lucide-react";
 import { SlideTransition } from "./slide-transition";
 import { HeroSlide } from "./slides/hero-slide";
 import { StatsSlide } from "./slides/stats-slide";
@@ -81,8 +81,8 @@ export function DeckPlayer() {
 
   return (
     <div ref={containerRef} className="fixed inset-0 flex flex-col bg-[#151515]">
-      {/* Slide area - no header */}
-      <div className="flex-1 relative min-h-0 overflow-hidden">
+      {/* Slide area: padding top en móvil; el scroll lo manejan las slides individuales */}
+      <div className="flex-1 relative min-h-0 overflow-hidden max-md:pt-6">
         <SlideTransition currentIndex={currentIndex} direction={direction}>
           <CurrentSlide />
         </SlideTransition>
@@ -96,8 +96,8 @@ export function DeckPlayer() {
       >
         {/* Canva-like bottom bar: se desliza desde abajo */}
         <div
-          className={`h-full px-4 flex items-center justify-between bg-[#1F2023] border-t border-white/5 relative transition-transform duration-300 ease-out ${
-            isBarVisible ? "translate-y-0" : "translate-y-full"
+          className={`h-full px-4 flex items-center justify-between bg-[#1F2023] border-t border-white/5 relative transition-transform duration-300 ease-out max-md:translate-y-0 ${
+            isBarVisible ? "md:translate-y-0" : "md:translate-y-full"
           }`}
         >
         <div className="flex items-center gap-2 flex-1 min-w-0 justify-start">
@@ -124,8 +124,8 @@ export function DeckPlayer() {
           </button>
         </div>
 
-        {/* Progress bar - Canva style (centered) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-0.5 w-48 justify-center">
+        {/* Progress bar - centrada en desktop, a la derecha en móvil */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center gap-0.5 w-48 justify-center">
           {Array.from({ length: TOTAL }).map((_, i) => (
             <button
               key={i}
@@ -143,28 +143,25 @@ export function DeckPlayer() {
           ))}
         </div>
 
-        <div className="flex items-center gap-1 flex-1 min-w-0 justify-end">
-          <button
-            type="button"
-            className="p-2 rounded-md text-white/70 hover:text-white hover:bg-white/10 transition-colors"
-            aria-label="Grid view"
-          >
-            <Grid3X3 className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            className="p-2 rounded-md text-white/70 hover:text-white hover:bg-white/10 transition-colors"
-            aria-label="Zoom"
-          >
-            <ZoomIn className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            className="p-2 rounded-md text-white/70 hover:text-white hover:bg-white/10 transition-colors"
-            aria-label="More options"
-          >
-            <MoreHorizontal className="h-5 w-5" />
-          </button>
+        <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
+          {/* Progress bar móvil - a la izquierda del botón expandir */}
+          <div className="flex md:hidden items-center gap-0.5 w-24 shrink-0">
+            {Array.from({ length: TOTAL }).map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => {
+                  setDirection(i > currentIndex ? 1 : -1);
+                  setCurrentIndex(i);
+                }}
+                className="h-1.5 rounded-sm min-w-[6px] flex-1 max-w-[12px] transition-colors focus:outline-none focus:ring-1 focus:ring-white/50"
+                style={{
+                  backgroundColor: i === currentIndex ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.25)",
+                }}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
           <button
             type="button"
             onClick={toggleFullscreen}

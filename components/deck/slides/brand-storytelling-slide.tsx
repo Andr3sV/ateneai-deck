@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function BrandStorytellingSlide() {
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515]">
+    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:items-start max-md:pb-24">
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

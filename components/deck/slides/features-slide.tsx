@@ -9,7 +9,7 @@ const MagicBento = dynamic(() => import("@/components/ui/magic-bento"), {
 
 export function FeaturesSlide() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center px-6 py-6 bg-[#151515] overflow-hidden">
+    <div className="relative w-full h-full min-h-0 flex items-center justify-center px-6 py-6 bg-[#151515] overflow-hidden max-md:overflow-y-auto max-md:overflow-x-hidden max-md:items-start max-md:py-8">
       <div className="flex flex-col items-center w-full max-w-[70rem]">
         <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
           <motion.h2
@@ -35,7 +35,7 @@ export function FeaturesSlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="w-full flex justify-center"
+          className="w-full flex justify-center max-md:pb-24"
         >
           <MagicBento
             textAutoHide={true}

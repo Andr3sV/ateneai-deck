@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
-import { FileText, Download } from "lucide-react";
+import { FileText } from "lucide-react";
+import CardSwap, { Card } from "@/components/ui/card-swap";
 
 export function ReportsSlide() {
   const { language } = useLanguage();
@@ -30,7 +30,7 @@ export function ReportsSlide() {
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-wrap gap-3 justify-center mb-8 w-full max-w-3xl">
+        <div className="flex flex-wrap gap-3 justify-center w-full max-w-3xl">
           {t.points.map((point, i) => (
             <motion.span
               key={i}
@@ -45,31 +45,35 @@ export function ReportsSlide() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="relative w-full max-w-4xl h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
-        >
-          <Image
-            src="/images/dashboard/reports.png"
-            alt={t.imageAlt}
-            fill
-            className="object-contain"
-            unoptimized
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              const placeholder = target.parentElement?.querySelector('.placeholder');
-              if (placeholder) {
-                (placeholder as HTMLElement).style.display = 'flex';
-              }
-            }}
-          />
-          <div className="placeholder absolute inset-0 flex items-center justify-center bg-[#151515]/80" style={{ display: 'none' }}>
-            <p className="text-[#A0A0A0] text-sm text-center">{t.imageAlt}</p>
-          </div>
-        </motion.div>
+        {/* Contenedor debajo del título y los tags: solo aquí va el stack de cards */}
+        <div className="mt-8 md:mt-10 w-full flex justify-center flex-shrink-0 overflow-visible">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="relative overflow-visible"
+          >
+            <CardSwap
+            width={220}
+            height={140}
+            cardDistance={36}
+            verticalDistance={44}
+            delay={5000}
+            pauseOnHover
+            easing="elastic"
+          >
+            {t.cards.map((card, i) => (
+              <Card
+                key={i}
+                customClass="border-[#C2C2E1]/30 bg-[#1a1a1a] p-4 flex flex-col justify-center"
+              >
+                <h3 className="text-sm font-medium text-white mb-1">{card.title}</h3>
+                <p className="text-xs text-[#C2C2E1] leading-tight">{card.description}</p>
+              </Card>
+            ))}
+          </CardSwap>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

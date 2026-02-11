@@ -206,6 +206,11 @@ export const translations = {
         "Trend analysis",
         "Strategic recommendations",
       ],
+      cards: [
+        { title: "Exportable reports", description: "Detailed PDF reports for stakeholders" },
+        { title: "AI Insights", description: "Insights based on your data" },
+        { title: "Trends & strategy", description: "Trend analysis and recommendations" },
+      ],
       imageAlt: "Reports and AI Insights",
     },
     opportunities: {
@@ -477,6 +482,11 @@ export const translations = {
         "AI Insights basados en datos",
         "Análisis de tendencias",
         "Recomendaciones estratégicas",
+      ],
+      cards: [
+        { title: "Reportes exportables", description: "Reportes PDF detallados para stakeholders" },
+        { title: "AI Insights", description: "Insights basados en tus datos" },
+        { title: "Tendencias y estrategia", description: "Análisis de tendencias y recomendaciones" },
       ],
       imageAlt: "Reportes e AI Insights",
     },

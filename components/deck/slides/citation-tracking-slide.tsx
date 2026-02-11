@@ -51,7 +51,7 @@ export function CitationTrackingSlide() {
         >
           <div className="bg-white/5 flex items-center justify-center relative">
             <Image
-              src="/images/dashboard/citation-tracking.png"
+              src="/citations.png"
               alt={t.imageAlt}
               width={1200}
               height={675}

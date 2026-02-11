@@ -43,70 +43,55 @@ export function ShareOfVoiceSlide() {
           ))}
         </div>
 
-        {/* Two image boxes at the bottom */}
+        {/* Two image boxes: fill container with object-cover */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
           {/* Market Positioning Matrix */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative w-full rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
+            className="relative w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
           >
-            <div className="relative">
-              <Image
-                src="/images/dashboard/market-positioning-matrix.png"
-                alt="Market Positioning Matrix"
-                fill
-                className="object-contain"
-                unoptimized
-                onError={(e) => {
-                  // Fallback to placeholder if image doesn't exist
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const placeholder = target.parentElement?.querySelector('.placeholder');
-                  if (placeholder) {
-                    (placeholder as HTMLElement).style.display = 'flex';
-                  }
-                }}
-              />
-              <div className="placeholder absolute inset-0 flex items-center justify-center p-4" style={{ display: 'none' }}>
-                <p className="text-[#A0A0A0] text-sm text-center">
-                  Market Positioning Matrix
-                </p>
-              </div>
+            <Image
+              src="/bat.png"
+              alt="Market Positioning Matrix"
+              fill
+              className="object-cover"
+              unoptimized
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const placeholder = target.parentElement?.querySelector('.placeholder');
+                if (placeholder) {
+                  (placeholder as HTMLElement).style.display = 'flex';
+                }
+              }}
+            />
+            <div className="placeholder absolute inset-0 flex items-center justify-center p-4 bg-[#151515]/80" style={{ display: 'none' }}>
+              <p className="text-[#A0A0A0] text-sm text-center">
+                Market Positioning Matrix
+              </p>
             </div>
           </motion.div>
 
-          {/* Mentions Evolution */}
+          {/* Right: white background with image on top */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative w-full rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
+            className="relative w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white"
           >
-            <div className="relative">
-              <Image
-                src="/images/dashboard/mentions-evolution.png"
-                alt="Mentions Evolution"
-                fill
-                className="object-contain"
-                unoptimized
-                onError={(e) => {
-                  // Fallback to placeholder if image doesn't exist
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const placeholder = target.parentElement?.querySelector('.placeholder');
-                  if (placeholder) {
-                    (placeholder as HTMLElement).style.display = 'flex';
-                  }
-                }}
-              />
-              <div className="placeholder absolute inset-0 flex items-center justify-center p-4" style={{ display: 'none' }}>
-                <p className="text-[#A0A0A0] text-sm text-center">
-                  Mentions Evolution
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/bat2.png"
+              alt="Mentions Evolution"
+              fill
+              className="object-contain"
+              unoptimized
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
           </motion.div>
         </div>
       </div>

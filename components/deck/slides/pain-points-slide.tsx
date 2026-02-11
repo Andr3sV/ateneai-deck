@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
+import { ElectricBorder } from "@/components/ui/electric-border";
 
 export function PainPointsSlide() {
   const { language } = useLanguage();
@@ -41,39 +42,50 @@ export function PainPointsSlide() {
             </ul>
           </motion.div>
 
-          {/* With AteneAI */}
+          {/* With AteneAI - Electric Border */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-emerald-900/5 border-emerald-900/20 border rounded-xl pt-8 pr-8 pb-8 pl-8 relative"
+            className="relative"
           >
-            <div className="absolute top-0 right-0 p-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path>
-                <path d="M12 14a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0v-2a5 5 0 0 1 5-5z"></path>
-              </svg>
-            </div>
-            <h3 className="text-sm font-semibold text-emerald-500 mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              {t.withAteneAI}
-            </h3>
-            <ul className="space-y-4">
-              {t.points.map((point, i) => {
-                const solutions = language === "en" 
-                  ? ["→ Full visibility & metrics", "→ 5 Projects", "→ Full visibility & metrics", "→ Full visibility & metrics"]
-                  : ["→ Visibilidad completa y métricas", "→ 5 Proyectos", "→ Visibilidad completa y métricas", "→ Visibilidad completa y métricas"];
-                return (
-                  <li key={i} className="flex justify-between items-start gap-3 text-xs text-slate-300">
-                    <div className="flex gap-3">
-                      <span className="text-emerald-500 mt-0.5">✓</span>
-                      <span>{point}</span>
-                    </div>
-                    <span className="text-emerald-500 opacity-60">{solutions[i] || solutions[0]}</span>
-                  </li>
-                );
-              })}
-            </ul>
+            <ElectricBorder
+              color="#10b981"
+              speed={1}
+              chaos={0.12}
+              borderRadius={16}
+              className="w-full"
+              style={{ borderRadius: 16 }}
+            >
+              <div className="bg-emerald-900/5 rounded-xl pt-8 pr-8 pb-8 pl-8 relative min-h-[280px]">
+                <div className="absolute top-0 right-0 p-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path>
+                    <path d="M12 14a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0v-2a5 5 0 0 1 5-5z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-sm font-semibold text-emerald-500 mb-6 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  {t.withAteneAI}
+                </h3>
+                <ul className="space-y-4">
+                  {t.points.map((point, i) => {
+                    const solutions = language === "en"
+                      ? ["→ Full visibility & metrics", "→ unlimited brands", "→ Full visibility & metrics", "→ Full visibility & metrics", "→ Full visibility & metrics"]
+                      : ["→ Visibilidad completa y métricas", "→ marcas ilimitadas", "→ Visibilidad completa y métricas", "→ Visibilidad completa y métricas", "→ Visibilidad completa y métricas"];
+                    return (
+                      <li key={i} className="flex justify-between items-start gap-3 text-xs text-slate-300">
+                        <div className="flex gap-3">
+                          <span className="text-emerald-500 mt-0.5">✓</span>
+                          <span>{point}</span>
+                        </div>
+                        <span className="text-emerald-500 opacity-60">{solutions[i] || solutions[0]}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </ElectricBorder>
           </motion.div>
         </div>
       </div>

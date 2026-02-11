@@ -54,10 +54,10 @@ export function ReportsSlide() {
             className="relative overflow-visible"
           >
             <CardSwap
-            width={220}
-            height={140}
-            cardDistance={36}
-            verticalDistance={44}
+            width={300}
+            height={190}
+            cardDistance={50}
+            verticalDistance={60}
             delay={5000}
             pauseOnHover
             easing="elastic"
@@ -65,10 +65,10 @@ export function ReportsSlide() {
             {t.cards.map((card, i) => (
               <Card
                 key={i}
-                customClass="border-[#C2C2E1]/30 bg-[#1a1a1a] p-4 flex flex-col justify-center"
+                customClass="border-[#C2C2E1]/30 bg-[#1a1a1a] p-5 flex flex-col justify-center"
               >
-                <h3 className="text-sm font-medium text-white mb-1">{card.title}</h3>
-                <p className="text-xs text-[#C2C2E1] leading-tight">{card.description}</p>
+                <h3 className="text-base font-medium text-white mb-2">{card.title}</h3>
+                <p className="text-sm text-[#C2C2E1] leading-snug">{card.description}</p>
               </Card>
             ))}
           </CardSwap>

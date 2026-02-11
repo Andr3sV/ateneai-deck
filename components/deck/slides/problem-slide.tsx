@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export function ProblemSlide() {
   const { language } = useLanguage();
@@ -35,24 +36,26 @@ export function ProblemSlide() {
         {/* Combined grid: 4 market stats on top, 4 problem stats below */}
         <div className="w-full flex flex-col justify-center gap-2 md:gap-3">
           {/* Market stats row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 mb-1 md:mb-2">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 mb-1 md:mb-2 items-stretch">
             {stats.metrics.map((metric, i) => (
               <motion.div
                 key={`market-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                className="rounded-lg border border-white/10 bg-white/5 p-2 md:p-3 lg:p-4 backdrop-blur-sm"
+                className="min-h-0 flex"
               >
-                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#C2C2E1] mb-0.5 md:mb-1">
-                  {metric.value}
-                </p>
-                <h3 className="text-xs md:text-sm font-semibold text-white mb-0.5">
-                  {metric.title}
-                </h3>
-                <p className="text-[10px] md:text-xs text-[#A0A0A0] leading-tight">
-                  {metric.description}
-                </p>
+                <SpotlightCard spotlightColor="rgba(194, 194, 225, 0.2)" className="rounded-lg p-2 md:p-3 lg:p-4 h-full w-full flex flex-col">
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#C2C2E1] mb-0.5 md:mb-1">
+                    {metric.value}
+                  </p>
+                  <h3 className="text-xs md:text-sm font-semibold text-white mb-0.5">
+                    {metric.title}
+                  </h3>
+                  <p className="text-[10px] md:text-xs text-[#A0A0A0] leading-tight flex-1">
+                    {metric.description}
+                  </p>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>
@@ -65,17 +68,18 @@ export function ProblemSlide() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                className="rounded-lg border border-white/10 bg-white/5 p-3 md:p-4 lg:p-5 backdrop-blur-sm"
               >
-                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2C2E1] mb-1 md:mb-2">
-                  {stat.value}
-                </p>
-                <h3 className="text-sm md:text-base font-semibold text-white mb-0.5">
-                  {stat.title}
-                </h3>
-                <p className="text-xs text-[#A0A0A0] leading-tight">
-                  {stat.description}
-                </p>
+                <SpotlightCard spotlightColor="rgba(194, 194, 225, 0.2)" className="rounded-lg p-3 md:p-4 lg:p-5">
+                  <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2C2E1] mb-1 md:mb-2">
+                    {stat.value}
+                  </p>
+                  <h3 className="text-sm md:text-base font-semibold text-white mb-0.5">
+                    {stat.title}
+                  </h3>
+                  <p className="text-xs text-[#A0A0A0] leading-tight">
+                    {stat.description}
+                  </p>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>

@@ -58,12 +58,6 @@ export function PainPointsSlide() {
               style={{ borderRadius: 16 }}
             >
               <div className="bg-emerald-900/5 rounded-xl pt-8 pr-8 pb-8 pl-8 relative min-h-[280px]">
-                <div className="absolute top-0 right-0 p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path>
-                    <path d="M12 14a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0v-2a5 5 0 0 1 5-5z"></path>
-                  </svg>
-                </div>
                 <h3 className="text-sm font-semibold text-emerald-500 mb-6 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                   {t.withAteneAI}

@@ -238,7 +238,7 @@ export const translations = {
           description: "Measure marketing ROI in AI",
         },
         {
-          role: "Brand Managers",
+          role: "Head of Performance",
           description: "Optimize brand visibility",
         },
         {
@@ -510,7 +510,7 @@ export const translations = {
           description: "Medir ROI de marketing en IA",
         },
         {
-          role: "Brand Managers",
+          role: "Head of Performance",
           description: "Optimizar visibilidad de marca",
         },
         {

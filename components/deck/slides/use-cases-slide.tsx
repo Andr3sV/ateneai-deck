@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { Users, Target, TrendingUp, Search } from "lucide-react";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const icons = [Users, Target, TrendingUp, Search];
 
@@ -18,11 +19,11 @@ export function UseCasesSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-8 md:mb-12"
+          className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-6 md:mb-8"
         >
           {t.title}
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 w-full max-w-4xl">
           {t.cases.map((useCase, i) => {
             const Icon = icons[i] || Users;
             return (
@@ -30,16 +31,16 @@ export function UseCasesSlide() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-                className="p-6 border border-white/10 rounded-lg flex items-center gap-4 bg-[#0a0a0a] hover:bg-white/5 transition-colors"
+                transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+                className="min-h-0 flex"
               >
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0">
-                  <Icon className="h-[18px] w-[18px]" />
-                </div>
-                <div>
+                <SpotlightCard spotlightColor="rgba(194, 194, 225, 0.2)" className="h-full w-full flex flex-col items-center justify-center text-center p-4 md:p-5 aspect-square">
+                  <div className="w-10 h-10 rounded-full bg-white/[0.08] border border-[#C2C2E1]/20 flex items-center justify-center text-[#C2C2E1] flex-shrink-0 mb-3">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-sm font-semibold text-white">{useCase.role}</h3>
-                  <p className="text-xs text-slate-500">{useCase.description}</p>
-                </div>
+                  <p className="text-xs text-[#A0A0A0] leading-snug mt-1">{useCase.description}</p>
+                </SpotlightCard>
               </motion.div>
             );
           })}

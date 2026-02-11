@@ -1,9 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
-import { TrendingUp } from "lucide-react";
+
+const MagicBentoMinimal = dynamic(
+  () =>
+    import("@/components/ui/magic-bento-minimal").then((m) => m.MagicBentoMinimal),
+  { ssr: false }
+);
 
 export function RoiValueSlide() {
   const { language } = useLanguage();
@@ -16,31 +22,29 @@ export function RoiValueSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-8 md:mb-12"
+          className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-8 md:mb-10"
         >
           {t.title}
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full max-w-4xl">
-          {t.metrics.map((metric, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              className="rounded-xl border border-[#C2C2E1]/30 bg-white/5 p-6 backdrop-blur-sm text-center"
-            >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#C2C2E1]/20">
-                <TrendingUp className="h-6 w-6 text-[#C2C2E1]" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="w-full flex justify-center"
+        >
+          <MagicBentoMinimal glowColor="194, 194, 225" spotlightRadius={300}>
+            {t.metrics.map((metric, i) => (
+              <div key={i} className="flex flex-col items-center justify-center py-1">
+                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2C2E1] mb-2">
+                  {metric.value}
+                </p>
+                <p className="text-xs md:text-sm text-[#A0A0A0] leading-snug">
+                  {metric.description}
+                </p>
               </div>
-              <p className="text-3xl md:text-4xl font-bold text-white mb-2">
-                {metric.value}
-              </p>
-              <p className="text-sm md:text-base text-[#E0E0E0] leading-relaxed">
-                {metric.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </MagicBentoMinimal>
+        </motion.div>
       </div>
     </div>
   );

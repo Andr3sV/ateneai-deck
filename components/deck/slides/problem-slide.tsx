@@ -27,7 +27,7 @@ export function ProblemSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-lg md:text-xl lg:text-2xl font-light text-[#C2C2E1]"
+            className="text-sm md:text-base text-[#C2C2E1]"
           >
             {t.title.split(". ").slice(1).join(". ")}
           </motion.p>

@@ -12,30 +12,32 @@ export function StatsSlide() {
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-10 bg-[#151515] overflow-auto max-md:pb-24">
       <div className="w-[80%] mx-auto w-full text-center">
         {/* Título y subtítulo */}
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1"
-        >
-          {t.title}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-2xl md:text-3xl lg:text-4xl font-light text-[#C2C2E1] mb-6"
-        >
-          {t.subtitle}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-base md:text-lg text-[#E0E0E0] mb-12 max-w-2xl mx-auto"
-        >
-          {t.description}
-        </motion.p>
+        <div className="mb-6 md:mb-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2"
+          >
+            {t.title}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="text-sm md:text-base text-[#C2C2E1] mb-1"
+          >
+            {t.subtitle}
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-sm md:text-base text-[#C2C2E1] max-w-2xl mx-auto"
+          >
+            {t.description}
+          </motion.p>
+        </div>
 
         {/* Cuatro métricas */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">

@@ -30,7 +30,7 @@ export function FeaturesSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-sm md:text-base text-[#E0E0E0]"
+            className="text-sm md:text-base text-[#C2C2E1]"
           >
             {t.description}
           </motion.p>

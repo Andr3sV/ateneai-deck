@@ -25,22 +25,24 @@ const testimonials = [
 export function TestimonialsSlide() {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515]">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-2xl md:text-3xl font-light text-white mb-2 text-center"
-      >
-        What brands say
-      </motion.h2>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-base text-[#A0A0A0] mb-10 text-center"
-      >
+      <div className="w-full mx-auto text-center mb-6 md:mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2 text-center"
+        >
+          What brands say
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-sm md:text-base text-[#C2C2E1] mb-0 text-center"
+        >
         See how companies are transforming their AI visibility strategy
-      </motion.p>
+        </motion.p>
+      </div>
       <div className="grid md:grid-cols-2 gap-6 w-[80%] mx-auto w-full">
         {testimonials.map((t, i) => (
           <motion.div

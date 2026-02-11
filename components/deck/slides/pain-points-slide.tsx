@@ -12,14 +12,16 @@ export function PainPointsSlide() {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
       <div className="max-w-5xl mx-auto w-full">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl font-semibold text-white text-center mb-12"
-        >
-          {t.title}
-        </motion.h2>
+        <div className="w-full mx-auto text-center mb-10 md:mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2 text-center"
+          >
+            {t.title}
+          </motion.h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Without AteneAI */}
           <motion.div

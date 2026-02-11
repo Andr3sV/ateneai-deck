@@ -24,7 +24,7 @@ export function CitationTrackingSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-base md:text-lg text-[#C2C2E1] mb-5"
+          className="text-sm md:text-base text-[#C2C2E1] mb-6 md:mb-8"
         >
           {t.subtitle}
         </motion.p>

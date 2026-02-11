@@ -10,7 +10,7 @@ export function StatsSlide() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-10 bg-[#151515] overflow-auto max-md:pb-24">
-      <div className="max-w-5xl mx-auto w-full text-center">
+      <div className="w-[80%] mx-auto w-full text-center">
         {/* Título y subtítulo */}
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

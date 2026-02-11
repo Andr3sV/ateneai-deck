@@ -23,7 +23,7 @@ export function PricingSlide() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center px-4 py-6 bg-[#151515] overflow-auto max-md:items-start max-md:justify-center max-md:pt-8 max-md:pb-24">
-      <div className="w-full max-w-5xl mx-auto">
+      <div className="w-[80%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {plans.map((plan, i) => (
             <motion.div

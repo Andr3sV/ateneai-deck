@@ -10,7 +10,7 @@ export function AeoQuoteSlide() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center px-6 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:py-8 max-md:pb-24">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="w-[80%] mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

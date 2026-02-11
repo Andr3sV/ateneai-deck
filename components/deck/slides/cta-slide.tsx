@@ -12,7 +12,7 @@ export function CtaSlide() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:py-8 max-md:pb-24">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="w-[80%] mx-auto text-center">
         {/* Logo igual que en la primera slide */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

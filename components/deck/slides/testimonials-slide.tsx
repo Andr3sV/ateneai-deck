@@ -41,7 +41,7 @@ export function TestimonialsSlide() {
       >
         See how companies are transforming their AI visibility strategy
       </motion.p>
-      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
+      <div className="grid md:grid-cols-2 gap-6 w-[80%] mx-auto w-full">
         {testimonials.map((t, i) => (
           <motion.div
             key={t.name}
@@ -56,7 +56,7 @@ export function TestimonialsSlide() {
                   src={t.avatar}
                   alt={t.name}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               </div>

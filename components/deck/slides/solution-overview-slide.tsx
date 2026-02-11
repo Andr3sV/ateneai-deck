@@ -9,9 +9,9 @@ const MagicBento = dynamic(() => import("@/components/ui/magic-bento"), {
   ssr: false,
 });
 
-export function FeaturesSlide() {
+export function SolutionOverviewSlide() {
   const { language } = useLanguage();
-  const t = translations[language].features;
+  const t = translations[language].solutionOverview;
 
   return (
     <div className="relative w-full h-full min-h-0 flex items-center justify-center px-6 py-6 bg-[#151515] overflow-hidden max-md:overflow-y-auto max-md:overflow-x-hidden max-md:items-start max-md:py-8">
@@ -24,7 +24,6 @@ export function FeaturesSlide() {
             className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2"
           >
             {t.title}
-            <span className="block text-[#C2C2E1]">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +31,7 @@ export function FeaturesSlide() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm md:text-base text-[#E0E0E0]"
           >
-            {t.description}
+            {t.subtitle}
           </motion.p>
         </div>
         <motion.div

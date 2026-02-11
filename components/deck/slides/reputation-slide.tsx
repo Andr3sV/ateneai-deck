@@ -11,7 +11,7 @@ export function ReputationSlide() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 bg-[#151515] overflow-hidden max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
-      <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
+      <div className="flex flex-col items-center w-[80%] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

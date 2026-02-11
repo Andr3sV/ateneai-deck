@@ -110,6 +110,165 @@ export const translations = {
       startMonitoring: "Start Monitoring",
       getDemo: "Get a Demo",
     },
+    problem: {
+      title: "Millions of decisions are made inside AI. Is your brand there?",
+      stats: [
+        { value: "100M+", title: "Daily Users", description: "On ChatGPT/Gemini" },
+        { value: "40%+", title: "Searches in AI", description: "Now happening in AI platforms" },
+        { value: "0%", title: "Brand Visibility", description: "Most brands have no visibility" },
+        { value: "∞", title: "Missed Opportunities", description: "Without tracking, opportunities are invisible" },
+      ],
+    },
+    painPoints: {
+      title: "What you're missing right now",
+      points: [
+        "Competitors mentioned, you're not",
+        "Invisible sales opportunities",
+        "No AI visibility metrics",
+        "Purchase decisions without your brand",
+      ],
+      withAteneAI: "With AteneAI",
+      withoutAteneAI: "Without AteneAI",
+    },
+    solutionOverview: {
+      title: "AteneAI: Complete visibility into AI-generated responses",
+      subtitle: "Track, analyze, and optimize your brand presence across all major AI platforms",
+      description: "From prompts to insights: See how AI platforms position your brand",
+      cards: [
+        { label: "Track", title: "Multi-Platform Tracking", description: "ChatGPT, Gemini, Claude, Perplexity" },
+        { label: "Analyze", title: "Real-time Analysis", description: "Monitor and analyze AI responses instantly" },
+        { label: "Optimize", title: "Brand Optimization", description: "Improve your presence in AI platforms" },
+        { label: "Insights", title: "Actionable Intelligence", description: "Turn visibility into strategic decisions" },
+      ],
+    },
+    shareOfVoice: {
+      title: "Know your position in the AI conversation",
+      subtitle: "Share of Voice & Competitive Intelligence",
+      points: [
+        "Share of Voice vs competitors",
+        "Market Positioning Matrix (share vs growth)",
+        "Competitive Battlefield by topics",
+        "Real-time trends",
+      ],
+      imageAlt: "Market Positioning Matrix and Share Evolution",
+    },
+    citationTracking: {
+      title: "Track every mention with real URLs",
+      subtitle: "Citation Tracking & Authority",
+      points: [
+        "Citations with real URLs",
+        "Citation Authority by topic",
+        "Most Cited Domains",
+        "Citation Sources tracking",
+      ],
+      imageAlt: "Citations Evolution and Most Cited Domains",
+    },
+    sentimentAnalysis: {
+      title: "Understand how AI perceives your brand",
+      subtitle: "Sentiment & Themes Analysis",
+      points: [
+        "Sentiment Analysis (positive/negative/neutral)",
+        "Themes extraction",
+        "Sentiment Trends Over Time",
+        "Competitive sentiment comparison",
+      ],
+      imageAlt: "Sentiment Trends and Themes",
+    },
+    platformPerformance: {
+      title: "Optimize across ChatGPT, Gemini, Claude, Perplexity",
+      subtitle: "Platform Performance & Query Patterns",
+      points: [
+        "Platform Breakdown (which platform mentions more)",
+        "Query Patterns (which questions generate mentions)",
+        "Query Word Cloud",
+        "Platform Momentum",
+      ],
+      imageAlt: "Platform Breakdown and Query Word Cloud",
+    },
+    executiveOverview: {
+      title: "Everything your C-suite needs to know",
+      subtitle: "Executive Overview",
+      points: [
+        "KPIs at a glance",
+        "Competitive Hero (ranking)",
+        "Weekly Battle Report",
+        "Battle KPIs",
+      ],
+      imageAlt: "Executive Overview Dashboard",
+    },
+    reports: {
+      title: "AI-powered insights and detailed reports",
+      subtitle: "Reports & Insights",
+      points: [
+        "Detailed exportable reports (PDF)",
+        "AI Insights based on data",
+        "Trend analysis",
+        "Strategic recommendations",
+      ],
+      imageAlt: "Reports and AI Insights",
+    },
+    opportunities: {
+      title: "Turn insights into action",
+      subtitle: "Opportunities & Growth",
+      points: [
+        "Untracked Competitors (new competitors detected)",
+        "Citation Authority gaps",
+        "High Value Sources (unmentioned sources)",
+        "Strategic recommendations",
+      ],
+      imageAlt: "Opportunities Dashboard",
+    },
+    competitiveDifferentiators: {
+      title: "Why AteneAI?",
+      points: [
+        "Multi-platform tracking (4 platforms)",
+        "Real-time data (up to today)",
+        "Citation tracking with real URLs",
+        "Integrated competitive intelligence",
+        "AI-powered insights",
+        "Exportable reports",
+      ],
+    },
+    useCases: {
+      title: "Who uses AteneAI?",
+      cases: [
+        {
+          role: "CMOs",
+          description: "Measure marketing ROI in AI",
+        },
+        {
+          role: "Brand Managers",
+          description: "Optimize brand visibility",
+        },
+        {
+          role: "Competitive Intelligence",
+          description: "Competitive monitoring",
+        },
+        {
+          role: "SEO/GEO Teams",
+          description: "Optimization for generative engines",
+        },
+      ],
+    },
+    roiValue: {
+      title: "The impact on your business",
+      metrics: [
+        { value: "+X%", description: "Visibility in AI responses" },
+        { value: "Y", description: "Monthly opportunities identified" },
+        { value: "-Z%", description: "Analysis time reduction" },
+        { value: "↑", description: "Competitive positioning improvement" },
+      ],
+    },
+    integration: {
+      title: "Get started in minutes",
+      points: [
+        "Quick setup (guided onboarding)",
+        "Multi-project support",
+        "Team collaboration",
+        "API ready (future)",
+      ],
+      imageAlt: "Onboarding flow",
+    },
   },
   es: {
     hero: {
@@ -221,6 +380,165 @@ export const translations = {
       quoteHighlight2: "lo que van a comprar",
       startMonitoring: "Empezar a monitorizar",
       getDemo: "Solicitar demo",
+    },
+    problem: {
+      title: "Millones de decisiones se toman dentro de la IA. ¿Está tu marca ahí?",
+      stats: [
+        { value: "100M+", title: "Usuarios Diarios", description: "En ChatGPT/Gemini" },
+        { value: "40%+", title: "Búsquedas en IA", description: "Ahora ocurren en plataformas de IA" },
+        { value: "0%", title: "Visibilidad de Marca", description: "La mayoría de marcas no tienen visibilidad" },
+        { value: "∞", title: "Oportunidades Perdidas", description: "Sin seguimiento, las oportunidades son invisibles" },
+      ],
+    },
+    painPoints: {
+      title: "Lo que te estás perdiendo ahora mismo",
+      points: [
+        "Competidores mencionados, tú no",
+        "Oportunidades de venta invisibles",
+        "Sin métricas de visibilidad en IA",
+        "Decisiones de compra sin tu marca",
+      ],
+      withAteneAI: "Con AteneAI",
+      withoutAteneAI: "Sin AteneAI",
+    },
+    solutionOverview: {
+      title: "AteneAI: Visibilidad completa en respuestas generadas por IA",
+      subtitle: "Rastrea, analiza y optimiza la presencia de tu marca en todas las principales plataformas de IA",
+      description: "De prompts a insights: Ve cómo las plataformas de IA posicionan tu marca",
+      cards: [
+        { label: "Rastrear", title: "Seguimiento Multi-Plataforma", description: "ChatGPT, Gemini, Claude, Perplexity" },
+        { label: "Analizar", title: "Análisis en Tiempo Real", description: "Monitoriza y analiza respuestas de IA al instante" },
+        { label: "Optimizar", title: "Optimización de Marca", description: "Mejora tu presencia en plataformas de IA" },
+        { label: "Insights", title: "Inteligencia Accionable", description: "Convierte la visibilidad en decisiones estratégicas" },
+      ],
+    },
+    shareOfVoice: {
+      title: "Conoce tu posición en la conversación de IA",
+      subtitle: "Share of Voice e Inteligencia Competitiva",
+      points: [
+        "Share of Voice vs competidores",
+        "Market Positioning Matrix (share vs growth)",
+        "Campo de batalla competitivo por temas",
+        "Tendencias en tiempo real",
+      ],
+      imageAlt: "Market Positioning Matrix y Evolución de Share",
+    },
+    citationTracking: {
+      title: "Rastrea cada mención con URLs reales",
+      subtitle: "Seguimiento de Citas y Autoridad",
+      points: [
+        "Citas con URLs reales",
+        "Citation Authority por tema",
+        "Dominios Más Citados",
+        "Seguimiento de fuentes de citas",
+      ],
+      imageAlt: "Evolución de Citas y Dominios Más Citados",
+    },
+    sentimentAnalysis: {
+      title: "Comprende cómo la IA percibe tu marca",
+      subtitle: "Análisis de Sentimiento y Temas",
+      points: [
+        "Análisis de Sentimiento (positivo/negativo/neutral)",
+        "Extracción de temas",
+        "Tendencias de Sentimiento en el Tiempo",
+        "Comparación de sentimiento competitivo",
+      ],
+      imageAlt: "Tendencias de Sentimiento y Temas",
+    },
+    platformPerformance: {
+      title: "Optimiza en ChatGPT, Gemini, Claude, Perplexity",
+      subtitle: "Rendimiento de Plataforma y Patrones de Consultas",
+      points: [
+        "Desglose de Plataforma (qué plataforma menciona más)",
+        "Patrones de Consultas (qué preguntas generan menciones)",
+        "Nube de Palabras de Consultas",
+        "Momentum de Plataforma",
+      ],
+      imageAlt: "Desglose de Plataforma y Nube de Palabras de Consultas",
+    },
+    executiveOverview: {
+      title: "Todo lo que tu C-suite necesita saber",
+      subtitle: "Vista Ejecutiva",
+      points: [
+        "KPIs en un vistazo",
+        "Competitive Hero (ranking)",
+        "Weekly Battle Report",
+        "Battle KPIs",
+      ],
+      imageAlt: "Panel de Vista Ejecutiva",
+    },
+    reports: {
+      title: "Insights impulsados por IA y reportes detallados",
+      subtitle: "Reportes e Insights",
+      points: [
+        "Reportes detallados exportables (PDF)",
+        "AI Insights basados en datos",
+        "Análisis de tendencias",
+        "Recomendaciones estratégicas",
+      ],
+      imageAlt: "Reportes e AI Insights",
+    },
+    opportunities: {
+      title: "Convierte insights en acción",
+      subtitle: "Oportunidades y Crecimiento",
+      points: [
+        "Competidores No Rastreados (nuevos competidores detectados)",
+        "Brechas de Citation Authority",
+        "Fuentes de Alto Valor (fuentes no mencionadas)",
+        "Recomendaciones estratégicas",
+      ],
+      imageAlt: "Panel de Oportunidades",
+    },
+    competitiveDifferentiators: {
+      title: "¿Por qué AteneAI?",
+      points: [
+        "Seguimiento multi-plataforma (4 plataformas)",
+        "Datos en tiempo real (hasta hoy)",
+        "Seguimiento de citas con URLs reales",
+        "Inteligencia competitiva integrada",
+        "Insights impulsados por IA",
+        "Reportes exportables",
+      ],
+    },
+    useCases: {
+      title: "¿Quién usa AteneAI?",
+      cases: [
+        {
+          role: "CMOs",
+          description: "Medir ROI de marketing en IA",
+        },
+        {
+          role: "Brand Managers",
+          description: "Optimizar visibilidad de marca",
+        },
+        {
+          role: "Inteligencia Competitiva",
+          description: "Monitoreo competitivo",
+        },
+        {
+          role: "Equipos SEO/GEO",
+          description: "Optimización para motores generativos",
+        },
+      ],
+    },
+    roiValue: {
+      title: "El impacto en tu negocio",
+      metrics: [
+        { value: "+X%", description: "Visibilidad en respuestas de IA" },
+        { value: "Y", description: "Oportunidades mensuales identificadas" },
+        { value: "-Z%", description: "Reducción de tiempo de análisis" },
+        { value: "↑", description: "Mejora de posicionamiento competitivo" },
+      ],
+    },
+    integration: {
+      title: "Comienza en minutos",
+      points: [
+        "Configuración rápida (onboarding guiado)",
+        "Soporte multi-proyecto",
+        "Colaboración en equipo",
+        "API lista (futuro)",
+      ],
+      imageAlt: "Flujo de onboarding",
     },
   },
 } as const;

@@ -27,7 +27,7 @@ const benefits = [
 export function BenefitsSlide() {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 bg-[#151515]">
-      <div className="max-w-4xl mx-auto">
+      <div className="w-[80%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {benefits.map((item, i) => (
             <motion.div

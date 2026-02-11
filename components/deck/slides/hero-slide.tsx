@@ -59,7 +59,7 @@ export function HeroSlide() {
 
       {/* Logo, nombre y título encima de los rayos para que la luz los ilumine */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+        <div className="w-[80%] mx-auto text-center flex flex-col items-center">
         <div className="mb-14 md:mb-20 flex flex-col items-center justify-center gap-3">
           <Image
             src="/logoateneaip.svg"

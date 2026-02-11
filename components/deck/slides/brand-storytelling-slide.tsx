@@ -11,7 +11,7 @@ export function BrandStorytellingSlide() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:items-start max-md:pb-24">
-      <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+      <div className="w-[80%] mx-auto text-center flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,14 +33,14 @@ export function BrandStorytellingSlide() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative w-full max-w-3xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50"
+          className="relative w-full max-w-5xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50"
         >
           <Image
             src="/images/web-page/attributes.png"
             alt={t.imageAlt}
             width={1200}
             height={675}
-            className="w-full h-auto object-contain"
+            className="w-full h-full object-contain"
             unoptimized
           />
         </motion.div>

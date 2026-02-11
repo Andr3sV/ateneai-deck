@@ -30,6 +30,7 @@ import { IntegrationSlide } from "./slides/integration-slide";
 // All available slides
 const ALL_SLIDES = {
   hero: { id: "hero", Component: HeroSlide },
+  aeoQuote: { id: "aeo-quote", Component: AeoQuoteSlide },
   problem: { id: "problem", Component: ProblemSlide },
   painPoints: { id: "pain-points", Component: PainPointsSlide },
   stats: { id: "stats", Component: StatsSlide },
@@ -110,10 +111,12 @@ const VERSIONS = {
 
 type VersionType = keyof typeof VERSIONS;
 
-export function DeckScrollView() {
+const VERSION_KEYS = Object.keys(VERSIONS) as VersionType[];
+
+export function DeckScrollView({ version: versionProp }: { version?: VersionType } = {}) {
   const searchParams = useSearchParams();
-  const versionParam = (searchParams.get("version") || "default") as VersionType;
-  const version = Object.keys(VERSIONS).includes(versionParam) ? versionParam : "default";
+  const versionParam = (versionProp ?? searchParams.get("version") ?? "default") as VersionType;
+  const version = VERSION_KEYS.includes(versionParam) ? versionParam : "default";
   const SLIDES = VERSIONS[version];
 
   // Enable scroll on body when in scroll view mode

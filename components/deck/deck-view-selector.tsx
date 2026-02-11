@@ -4,22 +4,23 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { DeckPlayer } from "./deck-player";
 import { DeckScrollView } from "./deck-scroll-view";
+import type { VersionType } from "./deck-player";
 
-function DeckViewContent() {
+function DeckViewContent({ version }: { version?: VersionType }) {
   const searchParams = useSearchParams();
   const view = searchParams.get("view") || "presentation";
-  
+
   if (view === "scroll") {
-    return <DeckScrollView />;
+    return <DeckScrollView version={version} />;
   }
-  
-  return <DeckPlayer />;
+
+  return <DeckPlayer version={version} />;
 }
 
-export function DeckViewSelector() {
+export function DeckViewSelector({ version }: { version?: VersionType } = {}) {
   return (
-    <Suspense fallback={<DeckScrollView />}>
-      <DeckViewContent />
+    <Suspense fallback={<DeckScrollView version={version} />}>
+      <DeckViewContent version={version} />
     </Suspense>
   );
 }

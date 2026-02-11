@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { Check } from "lucide-react";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export function CompetitiveDifferentiatorsSlide() {
   const { language } = useLanguage();
@@ -27,12 +28,15 @@ export function CompetitiveDifferentiatorsSlide() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              className="rounded-xl border border-[#C2C2E1]/30 bg-white/5 p-5 backdrop-blur-sm flex items-start gap-3 text-left"
             >
-              <Check className="h-5 w-5 text-[#C2C2E1] flex-shrink-0 mt-0.5" />
-              <p className="text-base md:text-lg text-[#E0E0E0] leading-relaxed">
-                {point}
-              </p>
+              <SpotlightCard spotlightColor="rgba(194, 194, 225, 0.2)">
+                <div className="flex items-start gap-3 text-left relative">
+                  <Check className="h-5 w-5 text-[#C2C2E1] flex-shrink-0 mt-0.5" />
+                  <p className="text-base md:text-lg text-[#E0E0E0] leading-relaxed">
+                    {point}
+                  </p>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

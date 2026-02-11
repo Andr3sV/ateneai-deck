@@ -18,17 +18,17 @@ export function CtaSlide() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-14 md:mb-16 flex flex-col items-center justify-center gap-2"
+          className="mb-14 md:mb-16 flex flex-col items-center justify-center gap-3"
         >
           <Image
             src="/logoateneaip.svg"
             alt=""
-            width={200}
-            height={200}
-            className="h-16 md:h-20 w-auto object-contain"
+            width={280}
+            height={280}
+            className="h-20 md:h-24 lg:h-28 w-auto object-contain"
             unoptimized
           />
-          <span className="text-[#C2C2E1] font-light text-3xl md:text-4xl tracking-tight">
+          <span className="text-[#C2C2E1] font-light text-4xl md:text-5xl tracking-tight">
             AteneAI
           </span>
         </motion.div>
@@ -69,7 +69,7 @@ export function CtaSlide() {
             href="https://www.ateneai.com/demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="h-12 px-8 rounded-md bg-white/10 text-white border border-white/30 font-medium hover:bg-white/20 transition-all"
+            className="h-12 px-8 rounded-md bg-white/10 text-white border border-white/30 font-medium hover:bg-white/20 transition-all flex items-center justify-center min-w-[180px]"
           >
             {t.getDemo}
           </a>

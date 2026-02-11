@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { FileText } from "lucide-react";
-import CardSwap, { Card } from "@/components/ui/card-swap";
 
 export function ReportsSlide() {
   const { language } = useLanguage();
@@ -43,37 +42,6 @@ export function ReportsSlide() {
               {point}
             </motion.span>
           ))}
-        </div>
-
-        {/* Contenedor debajo del título y los tags: solo aquí va el stack de cards */}
-        <div className="mt-8 md:mt-10 w-full flex justify-center flex-shrink-0 overflow-visible">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative overflow-visible"
-          >
-            <CardSwap
-            width={380}
-            height={240}
-            cardDistance={48}
-            verticalDistance={58}
-            delay={5000}
-            pauseOnHover
-            easing="elastic"
-          >
-            {t.cards.map((card, i) => (
-              <Card
-                key={i}
-                customClass="border-[#C2C2E1]/30 p-5 flex flex-col justify-center"
-                style={{ backgroundColor: "#151515" }}
-              >
-                <h3 className="text-base font-medium text-white mb-2">{card.title}</h3>
-                <p className="text-sm text-[#C2C2E1] leading-snug">{card.description}</p>
-              </Card>
-            ))}
-          </CardSwap>
-          </motion.div>
         </div>
       </div>
     </div>

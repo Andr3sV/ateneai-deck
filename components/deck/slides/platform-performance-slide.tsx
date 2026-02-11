@@ -51,7 +51,7 @@ export function PlatformPerformanceSlide() {
         >
           <div className="bg-white/5 flex items-center justify-center relative">
             <Image
-              src="/images/dashboard/platform-performance.png"
+              src="/platform.png"
               alt={t.imageAlt}
               width={1200}
               height={675}

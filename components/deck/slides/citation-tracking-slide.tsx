@@ -10,8 +10,8 @@ export function CitationTrackingSlide() {
   const t = translations[language].citationTracking;
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
-      <div className="w-[80%] mx-auto text-center flex flex-col items-center">
+    <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-6 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
+      <div className="w-[75%] max-w-4xl mx-auto text-center flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,12 +24,12 @@ export function CitationTrackingSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-base md:text-lg text-[#C2C2E1] mb-8"
+          className="text-base md:text-lg text-[#C2C2E1] mb-5"
         >
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-wrap gap-3 justify-center mb-8 w-full max-w-3xl">
+        <div className="flex flex-wrap gap-2 justify-center mb-5 w-full max-w-2xl">
           {t.points.map((point, i) => (
             <motion.span
               key={i}
@@ -47,7 +47,7 @@ export function CitationTrackingSlide() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="relative w-full max-w-6xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50"
+          className="relative w-full max-w-4xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50"
         >
           <div className="bg-white/5 flex items-center justify-center relative">
             <Image

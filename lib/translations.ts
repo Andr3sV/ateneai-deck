@@ -131,7 +131,7 @@ export const translations = {
       withoutAteneAI: "Without AteneAI",
     },
     solutionOverview: {
-      title: "AteneAI: Complete visibility into AI-generated responses",
+      title: "AteneAI — Complete visibility into AI-generated responses",
       subtitle: "Track, analyze, and optimize your brand presence across all major AI platforms",
       description: "From prompts to insights: See how AI platforms position your brand",
       cards: [
@@ -402,7 +402,7 @@ export const translations = {
       withoutAteneAI: "Sin AteneAI",
     },
     solutionOverview: {
-      title: "AteneAI: Visibilidad completa en respuestas generadas por IA",
+      title: "AteneAI — Visibilidad completa en respuestas generadas por IA",
       subtitle: "Rastrea, analiza y optimiza la presencia de tu marca en todas las principales plataformas de IA",
       description: "De prompts a insights: Ve cómo las plataformas de IA posicionan tu marca",
       cards: [

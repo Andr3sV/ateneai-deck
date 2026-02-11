@@ -49,29 +49,25 @@ export function SentimentAnalysisSlide() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative w-full rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
+            className="relative w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white"
           >
-            <div className="relative">
-              <Image
-                src="/images/dashboard/sentiment-analysis.png"
-                alt={t.imageAlt}
-                fill
-                className="object-contain"
-                unoptimized
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const placeholder = target.parentElement?.querySelector('.placeholder');
-                  if (placeholder) {
-                    (placeholder as HTMLElement).style.display = 'flex';
-                  }
-                }}
-              />
-              <div className="placeholder absolute inset-0 flex items-center justify-center p-4" style={{ display: 'none' }}>
-                <p className="text-[#A0A0A0] text-sm text-center">
-                  {t.imageAlt}
-                </p>
-              </div>
+            <Image
+              src="/images/dashboard/sentiment-analysis.png"
+              alt={t.imageAlt}
+              fill
+              className="object-contain"
+              unoptimized
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const placeholder = target.parentElement?.querySelector('.placeholder');
+                if (placeholder) {
+                  (placeholder as HTMLElement).style.display = 'flex';
+                }
+              }}
+            />
+            <div className="placeholder absolute inset-0 flex items-center justify-center p-4 bg-[#151515]/80" style={{ display: 'none' }}>
+              <p className="text-[#A0A0A0] text-sm text-center">{t.imageAlt}</p>
             </div>
           </motion.div>
 
@@ -80,29 +76,25 @@ export function SentimentAnalysisSlide() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative w-full rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
+            className="relative w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white"
           >
-            <div className="relative">
-              <Image
-                src="/images/dashboard/themes.png"
+            <Image
+src="/radial.png"
                 alt="Themes"
-                fill
-                className="object-contain"
-                unoptimized
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const placeholder = target.parentElement?.querySelector('.placeholder');
-                  if (placeholder) {
-                    (placeholder as HTMLElement).style.display = 'flex';
-                  }
-                }}
-              />
-              <div className="placeholder absolute inset-0 flex items-center justify-center p-4" style={{ display: 'none' }}>
-                <p className="text-[#A0A0A0] text-sm text-center">
-                  Themes
-                </p>
-              </div>
+              fill
+              className="object-contain"
+              unoptimized
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const placeholder = target.parentElement?.querySelector('.placeholder');
+                if (placeholder) {
+                  (placeholder as HTMLElement).style.display = 'flex';
+                }
+              }}
+            />
+            <div className="placeholder absolute inset-0 flex items-center justify-center p-4 bg-[#151515]/80" style={{ display: 'none' }}>
+              <p className="text-[#A0A0A0] text-sm text-center">Themes</p>
             </div>
           </motion.div>
         </div>

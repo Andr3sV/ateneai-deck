@@ -49,30 +49,26 @@ export function OpportunitiesSlide() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="relative w-full max-w-6xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50"
+          className="relative w-full max-w-4xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
         >
-          <div className="bg-white/5 flex items-center justify-center relative">
-            <Image
-              src="/images/dashboard/opportunities.png"
-              alt={t.imageAlt}
-              width={1200}
-              height={675}
-              className="w-full h-full object-contain"
-              unoptimized
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const placeholder = target.parentElement?.querySelector('.placeholder');
-                if (placeholder) {
-                  (placeholder as HTMLElement).style.display = 'flex';
-                }
-              }}
-            />
-            <div className="placeholder absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
-              <p className="text-[#A0A0A0] text-sm text-center">
-                {t.imageAlt}
-              </p>
-            </div>
+          <Image
+            src="/op.png"
+            alt={t.imageAlt}
+            width={1200}
+            height={675}
+            className="w-full h-auto block"
+            unoptimized
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const placeholder = target.parentElement?.querySelector('.placeholder');
+              if (placeholder) {
+                (placeholder as HTMLElement).style.display = 'flex';
+              }
+            }}
+          />
+          <div className="placeholder absolute inset-0 flex items-center justify-center bg-[#151515]/80" style={{ display: 'none' }}>
+            <p className="text-[#A0A0A0] text-sm text-center">{t.imageAlt}</p>
           </div>
         </motion.div>
       </div>

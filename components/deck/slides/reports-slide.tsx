@@ -65,7 +65,8 @@ export function ReportsSlide() {
             {t.cards.map((card, i) => (
               <Card
                 key={i}
-                customClass="border-[#C2C2E1]/30 bg-[#1a1a1a] p-5 flex flex-col justify-center"
+                customClass="border-[#C2C2E1]/30 p-5 flex flex-col justify-center"
+                style={{ backgroundColor: "#151515" }}
               >
                 <h3 className="text-base font-medium text-white mb-2">{card.title}</h3>
                 <p className="text-sm text-[#C2C2E1] leading-snug">{card.description}</p>

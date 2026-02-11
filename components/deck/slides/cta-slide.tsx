@@ -56,19 +56,23 @@ export function CtaSlide() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button
-            type="button"
+          <a
+            href="https://www.ateneai.com/demo"
+            target="_blank"
+            rel="noopener noreferrer"
             className="h-12 px-8 rounded-md text-black font-medium bg-[#C2C2E1] hover:bg-[#C2C2E1]/90 transition-all flex items-center gap-2 group"
           >
             {t.startMonitoring}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </button>
-          <button
-            type="button"
+          </a>
+          <a
+            href="https://www.ateneai.com/demo"
+            target="_blank"
+            rel="noopener noreferrer"
             className="h-12 px-8 rounded-md bg-white/10 text-white border border-white/30 font-medium hover:bg-white/20 transition-all"
           >
             {t.getDemo}
-          </button>
+          </a>
         </motion.div>
       </div>
     </div>

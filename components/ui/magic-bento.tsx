@@ -1622,7 +1622,7 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-2">
           {displayCards.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[250px] w-full max-w-full p-6 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out ${
+            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[250px] w-full max-w-full p-6 rounded-2xl border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out ${
               index === 0 ? '' : 'hover:-translate-y-0.5'
             } hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''

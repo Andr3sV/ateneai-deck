@@ -202,7 +202,7 @@ export function MagicBentoMinimal({
           }
           .magic-bento-minimal-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 1rem;
             border: 1px solid var(--border-color);
             background: ${cardBg};
             overflow: hidden;

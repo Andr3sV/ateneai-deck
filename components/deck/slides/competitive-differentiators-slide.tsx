@@ -23,24 +23,28 @@ export function CompetitiveDifferentiatorsSlide() {
             {t.title}
           </motion.h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-3xl">
-          {t.points.map((point, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-            >
-              <SpotlightCard spotlightColor="rgba(194, 194, 225, 0.2)">
-                <div className="flex items-start gap-3 text-left relative">
-                  <Check className="h-5 w-5 text-[#C2C2E1] flex-shrink-0 mt-0.5" />
-                  <p className="text-base md:text-lg text-[#E0E0E0] leading-relaxed">
-                    {point}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4 w-full max-w-5xl">
+          {t.cards.map((text, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
+                className="min-h-0 flex"
+              >
+                <SpotlightCard
+                  spotlightColor="rgba(194, 194, 225, 0.2)"
+                  className="h-full w-full flex flex-col items-center justify-center text-center p-4 md:p-5 aspect-square"
+                >
+                  <div className="w-10 h-10 rounded-full bg-white/[0.08] border border-[#C2C2E1]/20 flex items-center justify-center text-[#C2C2E1] flex-shrink-0 mb-3">
+                    <Check className="h-5 w-5" strokeWidth={2.5} />
+                  </div>
+                  <p className="text-sm text-[#E0E0E0] leading-snug">
+                    {text}
                   </p>
-                </div>
-              </SpotlightCard>
-            </motion.div>
-          ))}
+                </SpotlightCard>
+              </motion.div>
+            ))}
         </div>
       </div>
     </div>

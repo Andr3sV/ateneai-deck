@@ -173,6 +173,8 @@ export interface MagicBentoMinimalProps {
   glowColor?: string;
   spotlightRadius?: number;
   className?: string;
+  /** When true, cards have no background (transparent). */
+  noCardBackground?: boolean;
 }
 
 export function MagicBentoMinimal({
@@ -180,9 +182,11 @@ export function MagicBentoMinimal({
   glowColor = DEFAULT_GLOW_COLOR,
   spotlightRadius = DEFAULT_SPOTLIGHT_RADIUS,
   className = "",
+  noCardBackground = false,
 }: MagicBentoMinimalProps) {
   const gridRef = useRef<HTMLDivElement>(null);
   const items = React.Children.toArray(children).slice(0, 4);
+  const cardBg = noCardBackground ? "transparent" : "rgba(194, 194, 225, 0.08)";
 
   return (
     <>
@@ -200,7 +204,7 @@ export function MagicBentoMinimal({
             position: relative;
             border-radius: 20px;
             border: 1px solid var(--border-color);
-            background: rgba(194, 194, 225, 0.08);
+            background: ${cardBg};
             overflow: hidden;
             transition: box-shadow 0.3s ease;
           }

@@ -30,14 +30,14 @@ export function ReportsSlide() {
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-wrap gap-3 justify-center w-full max-w-3xl">
+        <div className="flex flex-nowrap gap-2 md:gap-3 justify-center w-full max-w-5xl overflow-x-auto pb-1">
           {t.points.map((point, i) => (
             <motion.span
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className="text-sm text-slate-300 bg-white/5 border-white/10 border rounded-full px-4 py-1.5 inline-flex items-center gap-2"
+              className="text-xs md:text-sm text-slate-300 bg-white/5 border-white/10 border rounded-full px-3 md:px-4 py-1.5 inline-flex items-center gap-2 flex-shrink-0"
             >
               <FileText className="h-3 w-3 text-slate-300 flex-shrink-0" />
               {point}
@@ -54,10 +54,10 @@ export function ReportsSlide() {
             className="relative overflow-visible"
           >
             <CardSwap
-            width={300}
-            height={190}
-            cardDistance={50}
-            verticalDistance={60}
+            width={380}
+            height={240}
+            cardDistance={48}
+            verticalDistance={58}
             delay={5000}
             pauseOnHover
             easing="elastic"

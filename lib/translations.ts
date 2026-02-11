@@ -201,7 +201,7 @@ export const translations = {
       title: "AI-powered insights and detailed reports",
       subtitle: "Reports & Insights",
       points: [
-        "Detailed exportable reports (PDF)",
+        "Exportable reports",
         "AI Insights based on data",
         "Trend analysis",
         "Strategic recommendations",
@@ -226,13 +226,12 @@ export const translations = {
     },
     competitiveDifferentiators: {
       title: "Why AteneAI?",
-      points: [
-        "Multi-platform tracking (4 platforms)",
-        "Real-time data (up to today)",
-        "Citation tracking with real URLs",
-        "Integrated competitive intelligence",
-        "AI-powered insights",
-        "Exportable reports",
+      cards: [
+        "Not just tracking — full competitive battlefield intelligence",
+        "Real citation authority analysis",
+        "AI-driven strategic recommendations",
+        "Automated website prompt generation",
+        "Detect competitors you didn't know existed",
       ],
     },
     useCases: {
@@ -478,7 +477,7 @@ export const translations = {
       title: "Insights impulsados por IA y reportes detallados",
       subtitle: "Reportes e Insights",
       points: [
-        "Reportes detallados exportables (PDF)",
+        "Reportes exportables",
         "AI Insights basados en datos",
         "Análisis de tendencias",
         "Recomendaciones estratégicas",
@@ -503,13 +502,12 @@ export const translations = {
     },
     competitiveDifferentiators: {
       title: "¿Por qué AteneAI?",
-      points: [
-        "Seguimiento multi-plataforma (4 plataformas)",
-        "Datos en tiempo real (hasta hoy)",
-        "Seguimiento de citas con URLs reales",
-        "Inteligencia competitiva integrada",
-        "Insights impulsados por IA",
-        "Reportes exportables",
+      cards: [
+        "No solo seguimiento — inteligencia completa del campo competitivo",
+        "Análisis real de autoridad de citas",
+        "Recomendaciones estratégicas impulsadas por IA",
+        "Generación automática de prompts para tu web",
+        "Detecta competidores que no sabías que existían",
       ],
     },
     useCases: {

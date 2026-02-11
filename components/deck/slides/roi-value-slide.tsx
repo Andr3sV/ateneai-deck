@@ -34,7 +34,7 @@ export function RoiValueSlide() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="w-full flex justify-center"
         >
-          <MagicBentoMinimal glowColor="194, 194, 225" spotlightRadius={300}>
+          <MagicBentoMinimal glowColor="194, 194, 225" spotlightRadius={300} noCardBackground>
             {t.metrics.map((metric, i) => (
               <div key={i} className="flex flex-col items-center justify-center py-1">
                 <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2C2E1] mb-2">

@@ -9,6 +9,10 @@ export function ProblemSlide() {
   const { language } = useLanguage();
   const t = translations[language].problem;
   const stats = translations[language].stats;
+  const title = t.title;
+  const hasSubtitle = "subtitle" in t && t.subtitle;
+  const subtitleText = hasSubtitle ? (t as { subtitle: string }).subtitle : title.split(". ").slice(1).join(". ");
+  const titleDisplay = hasSubtitle ? title : `${title.split(". ")[0]}.`;
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-4 md:px-6 py-4 md:py-6 bg-[#151515] overflow-hidden">
@@ -21,7 +25,7 @@ export function ProblemSlide() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2"
           >
-            {"subtitle" in t && t.subtitle ? t.title : `${t.title.split(". ")[0]}.`}
+            {titleDisplay}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +33,7 @@ export function ProblemSlide() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-sm md:text-base text-[#C2C2E1]"
           >
-            {"subtitle" in t && t.subtitle ? t.subtitle : t.title.split(". ").slice(1).join(". ")}
+            {subtitleText}
           </motion.p>
         </div>
         

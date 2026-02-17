@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./print.css";
 import { Providers } from "@/components/providers";
 
 const siteDescription =

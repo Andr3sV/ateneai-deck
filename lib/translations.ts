@@ -308,6 +308,44 @@ export const translations = {
       ],
       imageAlt: "Onboarding flow",
     },
+    board: {
+      slide1: {
+        headline: "AI Is Reshaping Market Discovery in {industry}",
+        content: "AI search is fundamentally changing how customers discover and evaluate brands. Traditional search visibility metrics no longer capture where decisions are being made.",
+      },
+      slide2: {
+        headline: "AI Visibility Is a Competitive Surface",
+        content: "When AI answers cite competitors more frequently than your brand, you lose market share in the fastest-growing channel. This is not a marketing metric—it's a competitive displacement risk.",
+      },
+      slide3: {
+        headline: "AI Visibility Is Becoming a Board-Level KPI",
+        metrics: [
+          { label: "AI Visibility Index", description: "Overall brand presence across AI platforms" },
+          { label: "Share of Citations", description: "Percentage of citations vs. competitors" },
+          { label: "Competitive Momentum", description: "Trend direction vs. market" },
+          { label: "Category Rank", description: "Position within industry category" },
+        ],
+      },
+      slide4: {
+        headline: "Most {industry} organizations lack AI visibility governance.",
+        content: "Without systematic monitoring, brands operate blind to AI-driven market shifts. This creates governance gaps that impact strategic positioning.",
+      },
+      slide5: {
+        headline: "AI Visibility Governance Framework",
+        framework: [
+          { step: "Monitor", description: "Track AI citations, sentiment, and competitive gaps across platforms" },
+          { step: "Benchmark", description: "Establish baseline metrics and competitive positioning" },
+          { step: "Execute", description: "Prioritize actions based on revenue impact and competitive risk" },
+          { step: "Report", description: "Board-ready KPIs and strategic insights" },
+        ],
+      },
+      slide6: {
+        headline: "AI Visibility Will Define Category Leadership in {industry}",
+        cta1: "Request Executive AI Visibility Briefing",
+        cta2: "Run a 30-Day AI Visibility Audit for {companyName}",
+      },
+      downloadPdf: "Download Executive Brief (PDF)",
+    },
   },
   es: {
     hero: {
@@ -615,6 +653,44 @@ export const translations = {
         "API lista (futuro)",
       ],
       imageAlt: "Flujo de onboarding",
+    },
+    board: {
+      slide1: {
+        headline: "La IA está transformando el descubrimiento de mercado en {industry}",
+        content: "La búsqueda por IA está cambiando fundamentalmente cómo los clientes descubren y evalúan marcas. Las métricas tradicionales de visibilidad en búsqueda ya no capturan dónde se están tomando las decisiones.",
+      },
+      slide2: {
+        headline: "La visibilidad en IA es una superficie competitiva",
+        content: "Cuando las respuestas de IA citan a competidores con más frecuencia que tu marca, pierdes participación de mercado en el canal de más rápido crecimiento. Esto no es una métrica de marketing—es un riesgo de desplazamiento competitivo.",
+      },
+      slide3: {
+        headline: "La visibilidad en IA se está convirtiendo en un KPI de nivel ejecutivo",
+        metrics: [
+          { label: "Índice de Visibilidad IA", description: "Presencia general de marca en plataformas de IA" },
+          { label: "Share of Citations", description: "Porcentaje de citas vs. competidores" },
+          { label: "Momentum Competitivo", description: "Dirección de tendencia vs. mercado" },
+          { label: "Ranking de Categoría", description: "Posición dentro de la categoría de industria" },
+        ],
+      },
+      slide4: {
+        headline: "La mayoría de las organizaciones de {industry} carecen de gobernanza de visibilidad en IA.",
+        content: "Sin monitoreo sistemático, las marcas operan ciegas a los cambios de mercado impulsados por IA. Esto crea brechas de gobernanza que impactan el posicionamiento estratégico.",
+      },
+      slide5: {
+        headline: "Marco de Gobernanza de Visibilidad en IA",
+        framework: [
+          { step: "Monitorear", description: "Rastrear citas de IA, sentimiento y brechas competitivas en todas las plataformas" },
+          { step: "Establecer Baseline", description: "Establecer métricas base y posicionamiento competitivo" },
+          { step: "Ejecutar", description: "Priorizar acciones basadas en impacto de ingresos y riesgo competitivo" },
+          { step: "Reportar", description: "KPIs listos para ejecutivos e insights estratégicos" },
+        ],
+      },
+      slide6: {
+        headline: "La visibilidad en IA definirá el liderazgo de categoría en {industry}",
+        cta1: "Solicitar Briefing Ejecutivo de Visibilidad en IA",
+        cta2: "Ejecutar Auditoría de Visibilidad en IA de 30 Días para {companyName}",
+      },
+      downloadPdf: "Descargar Brief Ejecutivo (PDF)",
     },
   },
 } as const;

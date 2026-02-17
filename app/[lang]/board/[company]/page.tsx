@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { BoardView } from "@/components/deck/board-view";
-import { getPersonalizationFromParams } from "@/lib/personalization";
+import { getBoardPersonalization } from "@/lib/personalization";
 import { getContent, hasContent } from "@/lib/content/index";
 import type { Language } from "@/lib/content/index";
 
@@ -27,10 +27,10 @@ export default async function BoardCompanyPage({
   }
   
   const content = getContent(lang, "board");
-  const personalization = getPersonalizationFromParams({
-    ...resolvedSearchParams,
-    company: resolvedParams.company,
-  });
+  const personalization = getBoardPersonalization(
+    resolvedParams.company,
+    resolvedSearchParams as Record<string, string | string[] | undefined>
+  );
   const mode = resolvedSearchParams.mode === "pdf" ? "pdf" : "web";
 
   return (

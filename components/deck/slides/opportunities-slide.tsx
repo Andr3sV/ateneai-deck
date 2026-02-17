@@ -10,7 +10,7 @@ export function OpportunitiesSlide() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
-      <div className="w-[80%] mx-auto flex flex-col">
+      <div className="w-[80%] mx-auto flex flex-col items-center text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,10 +27,10 @@ export function OpportunitiesSlide() {
         >
           {t.subtitle}
         </motion.p>
-        
+
         {/* Execution Blocks */}
         {t.blocks && t.blocks.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full mt-6 md:mt-8">
             {t.blocks.map((block, i) => (
               <motion.div
                 key={i}

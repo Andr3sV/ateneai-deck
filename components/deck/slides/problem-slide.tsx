@@ -21,7 +21,7 @@ export function ProblemSlide() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-2xl md:text-3xl lg:text-4xl font-light tracking-tight text-white mb-2"
           >
-            {t.title.split(". ")[0]}.
+            {"subtitle" in t && t.subtitle ? t.title : `${t.title.split(". ")[0]}.`}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export function ProblemSlide() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-sm md:text-base text-[#C2C2E1]"
           >
-            {t.title.split(". ").slice(1).join(". ")}
+            {"subtitle" in t && t.subtitle ? t.subtitle : t.title.split(". ").slice(1).join(". ")}
           </motion.p>
         </div>
         

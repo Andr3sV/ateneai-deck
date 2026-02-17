@@ -28,12 +28,12 @@ export function CitationEvidenceSlide() {
         >
           {t.subtitle}
         </motion.p>
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative w-full max-w-6xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 shadow-lg"
+          className="mt-6 md:mt-8 relative w-full max-w-6xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 shadow-lg"
         >
           <Image
             src="/op.png"

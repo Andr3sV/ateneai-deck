@@ -111,7 +111,8 @@ export const translations = {
       getDemo: "Get a Demo",
     },
     problem: {
-      title: "AI is already influencing buying decisions. Is your brand part of the answer?",
+      title: "AI is already influencing buying decisions",
+      subtitle: "Is your brand part of the answer?",
       stats: [
         { value: "100M+", title: "Daily Active Users", description: "ChatGPT and Gemini are now discovery channels." },
         { value: "40%+", title: "Search Shift to AI", description: "Discovery is moving beyond traditional search engines." },
@@ -349,7 +350,7 @@ export const translations = {
   },
   es: {
     hero: {
-      tagline: "La IA ya está moldeando las decisiones de compra. ¿Tu marca forma parte de la respuesta? En",
+      tagline: "La IA ya decide qué marcas se compran. ¿Tu marca forma parte de la respuesta… o está quedando fuera? En",
       brands: ["Gemini", "ChatGPT", "Claude"],
     },
     stats: {
@@ -459,12 +460,13 @@ export const translations = {
       getDemo: "Solicitar demo",
     },
     problem: {
-      title: "La IA ya está influyendo en la decisión de compra. Y no tienes visibilidad sobre lo que está diciendo de tu marca.",
+      title: "La IA ya está influyendo en la decisión de compra",
+      subtitle: "…y no tienes visibilidad sobre lo que está diciendo de tu marca",
       stats: [
-        { value: "100M+", title: "Usuarios diarios activos", description: "ChatGPT y Gemini ya son canales de descubrimiento." },
-        { value: "40%+", title: "Búsquedas en IA", description: "El punto de inicio ya no es Google." },
-        { value: "0%", title: "Visibilidad sin medición", description: "Si no lo mides, no existes." },
-        { value: "∞", title: "Oportunidades invisibles", description: "Cada respuesta sin tu marca es una venta perdida." },
+        { value: "100M+", title: "Usuarios diarios activos", description: "ChatGPT y Gemini ya son canales de descubrimiento masivo." },
+        { value: "40%+", title: "Búsquedas que comienzan con IA", description: "El punto de inicio ya no es Google." },
+        { value: "0%", title: "Visibilidad si no lo mides", description: "Lo que no se mide en IA, no existe." },
+        { value: "∞", title: "Oportunidades invisibles", description: "Cada respuesta sin tu marca es una venta potencial perdida." },
       ],
     },
     painPoints: {
@@ -488,10 +490,10 @@ export const translations = {
     },
     solutionOverview: {
       title: "AteneAI — Visibilidad completa en respuestas generadas por IA",
-      subtitle: "Rastrea, analiza y optimiza la presencia de tu marca en todas las principales plataformas de IA",
+      subtitle: "Rastrea, analiza y optimiza cómo la IA habla de tu marca frente a tus competidores",
       description: "De prompts a insights: Ve cómo las plataformas de IA posicionan tu marca",
       cards: [
-        { label: "Rastrear", title: "Seguimiento Multi-Plataforma", description: "ChatGPT, Gemini, Claude, Perplexity" },
+        { label: "Rastrear", title: "Seguimiento Multi-Plataforma", description: "ChatGPT, Gemini, Claude y Perplexity" },
         { label: "Analizar", title: "Análisis en Tiempo Real", description: "Monitoriza y analiza respuestas de IA al instante" },
         { label: "Optimizar", title: "Optimización de Marca", description: "Mejora tu presencia en plataformas de IA" },
         { label: "Insights", title: "Inteligencia Accionable", description: "Convierte la visibilidad en decisiones estratégicas" },

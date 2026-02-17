@@ -46,8 +46,8 @@ export function HeroSlide() {
         />
       </div>
 
-      {/* Language selector - esquina superior derecha */}
-      <div className="absolute top-6 right-6 z-20">
+      {/* Language selector - oculto */}
+      <div className="absolute top-6 right-6 z-20 hidden">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}

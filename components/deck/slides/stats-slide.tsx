@@ -25,7 +25,7 @@ export function StatsSlide() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="text-sm md:text-base text-[#C2C2E1] mb-1"
+            className="text-sm md:text-base text-[#C2C2E1]"
           >
             {t.subtitle}
           </motion.p>

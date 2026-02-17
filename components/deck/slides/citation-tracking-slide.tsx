@@ -24,12 +24,12 @@ export function CitationTrackingSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-sm md:text-base text-[#C2C2E1] mb-6 md:mb-8"
+          className="text-sm md:text-base text-[#C2C2E1]"
         >
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-wrap gap-2 justify-center mb-5 w-full max-w-2xl">
+        <div className="flex flex-wrap gap-2 justify-center mb-5 w-full max-w-2xl mt-6 md:mt-8">
           {t.points.map((point, i) => (
             <motion.span
               key={i}

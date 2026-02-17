@@ -22,6 +22,7 @@ import { PlatformPerformanceSlide } from "./slides/platform-performance-slide";
 import { ExecutiveOverviewSlide } from "./slides/executive-overview-slide";
 import { ReportsSlide } from "./slides/reports-slide";
 import { OpportunitiesSlide } from "./slides/opportunities-slide";
+import { CitationEvidenceSlide } from "./slides/citation-evidence-slide";
 import { CompetitiveDifferentiatorsSlide } from "./slides/competitive-differentiators-slide";
 import { UseCasesSlide } from "./slides/use-cases-slide";
 import { RoiValueSlide } from "./slides/roi-value-slide";
@@ -43,6 +44,7 @@ const ALL_SLIDES = {
   executiveOverview: { id: "executive-overview", Component: ExecutiveOverviewSlide },
   reports: { id: "reports", Component: ReportsSlide },
   opportunities: { id: "opportunities", Component: OpportunitiesSlide },
+  citationEvidence: { id: "citation-evidence", Component: CitationEvidenceSlide },
   competitiveDifferentiators: { id: "competitive-differentiators", Component: CompetitiveDifferentiatorsSlide },
   useCases: { id: "use-cases", Component: UseCasesSlide },
   roiValue: { id: "roi-value", Component: RoiValueSlide },
@@ -64,7 +66,6 @@ const VERSIONS = {
     ALL_SLIDES.features,
     ALL_SLIDES.executiveOverview,
     ALL_SLIDES.competitiveDifferentiators,
-    ALL_SLIDES.roiValue,
     ALL_SLIDES.cta,
   ],
   full: [
@@ -78,10 +79,10 @@ const VERSIONS = {
     ALL_SLIDES.executiveOverview,
     ALL_SLIDES.reports,
     ALL_SLIDES.opportunities,
+    ALL_SLIDES.citationEvidence,
     ALL_SLIDES.competitiveDifferentiators,
     ALL_SLIDES.painPoints,
     ALL_SLIDES.useCases,
-    ALL_SLIDES.roiValue,
     ALL_SLIDES.cta,
   ],
   hybrid: [
@@ -93,9 +94,9 @@ const VERSIONS = {
     ALL_SLIDES.executiveOverview,
     ALL_SLIDES.reports,
     ALL_SLIDES.opportunities,
+    ALL_SLIDES.citationEvidence,
     ALL_SLIDES.competitiveDifferentiators,
     ALL_SLIDES.useCases,
-    ALL_SLIDES.roiValue,
     ALL_SLIDES.cta,
   ],
   default: [

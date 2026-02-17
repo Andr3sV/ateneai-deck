@@ -60,24 +60,61 @@ export function HeroSlide() {
       {/* Logo, nombre y título encima de los rayos para que la luz los ilumine */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
         <div className="w-[80%] mx-auto text-center flex flex-col items-center">
-        <div className="mb-14 md:mb-20 flex flex-col items-center justify-center gap-3">
+        <div className="mb-8 md:mb-12 flex flex-col items-center justify-center gap-3">
           <Image
             src="/logoateneaip.svg"
             alt=""
             width={280}
             height={280}
-            className="h-24 md:h-28 lg:h-32 w-auto object-contain"
+            className="h-16 md:h-20 lg:h-24 w-auto object-contain"
             priority
             unoptimized
           />
-          <span className="text-[#C2C2E1] font-light text-4xl md:text-5xl lg:text-6xl tracking-tight">
-            AteneAI
-          </span>
         </div>
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-light tracking-tight leading-[1.2] text-center text-white max-w-2xl">
-          {tagline}
-          <br />
-          <span className="inline-block relative overflow-hidden h-[1.2em] align-middle">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight leading-[1.2] text-center text-white w-full mb-6 md:mb-8">
+          {tagline.includes(". ") ? (
+            <>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-semibold block mb-2"
+              >
+                {tagline.split(". ")[0]}
+                <span className="opacity-0">.</span>
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="inline-block text-2xl md:text-3xl lg:text-4xl"
+              >
+                {tagline.split(". ").slice(1).join(". ")}{" "}
+                <span className="inline-block ml-2 md:ml-3 relative overflow-hidden h-[1.2em] align-middle min-w-[120px] md:min-w-[140px] lg:min-w-[160px] text-left">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={brands[currentBrandIndex]}
+                      initial={{ opacity: 0, filter: "blur(8px)" }}
+                      animate={{ opacity: 1, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, filter: "blur(8px)" }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="text-[#C2C2E1] inline-block"
+                    >
+                      {brands[currentBrandIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
+              </motion.span>
+            </>
+          ) : (
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="block"
+            >
+              {tagline}{" "}
+          <span className="inline-block relative overflow-hidden h-[1.2em] align-middle min-w-[120px] md:min-w-[140px] lg:min-w-[160px] text-left">
             <AnimatePresence mode="wait">
               <motion.span
                 key={brands[currentBrandIndex]}
@@ -85,13 +122,23 @@ export function HeroSlide() {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(8px)" }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="text-[#C2C2E1]"
+                className="text-[#C2C2E1] inline-block"
               >
                 {brands[currentBrandIndex]}
               </motion.span>
             </AnimatePresence>
           </span>
+            </motion.span>
+          )}
         </h1>
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-[#C2C2E1] font-light text-lg md:text-xl lg:text-2xl tracking-tight"
+        >
+          AteneAI
+        </motion.span>
         </div>
       </div>
     </div>

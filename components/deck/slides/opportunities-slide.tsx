@@ -1,10 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
-import { TrendingUp } from "lucide-react";
 
 export function OpportunitiesSlide() {
   const { language } = useLanguage();
@@ -12,7 +10,7 @@ export function OpportunitiesSlide() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center px-6 py-8 bg-[#151515] max-md:overflow-y-auto max-md:overflow-x-hidden max-md:pb-24">
-      <div className="w-[80%] mx-auto text-center flex flex-col items-center">
+      <div className="w-[80%] mx-auto flex flex-col">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,52 +23,57 @@ export function OpportunitiesSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-sm md:text-base text-[#C2C2E1] mb-6 md:mb-8"
+          className="text-sm md:text-base text-[#C2C2E1]"
         >
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-wrap gap-3 justify-center mb-8 w-full max-w-3xl">
-          {t.points.map((point, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className="text-sm text-slate-300 bg-white/5 border-white/10 border rounded-full px-4 py-1.5 inline-flex items-center gap-2"
-            >
-              <TrendingUp className="h-3 w-3 text-slate-300 flex-shrink-0" />
-              {point}
-            </motion.span>
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="relative w-full max-w-4xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
-        >
-          <Image
-            src="/op.png"
-            alt={t.imageAlt}
-            width={1200}
-            height={675}
-            className="w-full h-auto block"
-            unoptimized
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-              const placeholder = target.parentElement?.querySelector('.placeholder');
-              if (placeholder) {
-                (placeholder as HTMLElement).style.display = 'flex';
-              }
-            }}
-          />
-          <div className="placeholder absolute inset-0 flex items-center justify-center bg-[#151515]/80" style={{ display: 'none' }}>
-            <p className="text-[#A0A0A0] text-sm text-center">{t.imageAlt}</p>
+        {/* Execution Blocks */}
+        {t.blocks && t.blocks.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
+            {t.blocks.map((block, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 flex flex-col h-full"
+              >
+                {/* Title */}
+                <h3 className="text-base md:text-lg font-semibold text-white mb-4 pb-4 border-b border-white/10">
+                  {block.title}
+                </h3>
+                
+                {/* Fix - Bold */}
+                <div className="mb-4">
+                  <p className="text-sm md:text-base font-semibold text-white leading-relaxed">
+                    {block.fix}
+                  </p>
+                </div>
+                
+                {/* Why - Secondary text */}
+                <div className="mb-6">
+                  <p className="text-xs md:text-sm text-slate-400 leading-relaxed">
+                    {block.why}
+                  </p>
+                </div>
+                
+                {/* Expected Impact - Green accent */}
+                <div className="mb-6 pb-6 border-b border-white/10">
+                  <p className="text-sm md:text-base font-medium text-emerald-400">
+                    {block.expectedImpact}
+                  </p>
+                </div>
+                
+                {/* Owner and Due Date - Bottom aligned */}
+                <div className="mt-auto flex justify-between items-center text-xs uppercase tracking-wider text-slate-500">
+                  <span className="font-medium">{block.owner}</span>
+                  <span className="font-medium">{block.dueDate}</span>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        )}
       </div>
     </div>
   );

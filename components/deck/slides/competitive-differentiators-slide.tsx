@@ -23,7 +23,7 @@ export function CompetitiveDifferentiatorsSlide() {
             {t.title}
           </motion.h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4 w-full max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 w-full max-w-5xl">
           {t.cards.map((text, i) => (
               <motion.div
                 key={i}
@@ -34,12 +34,12 @@ export function CompetitiveDifferentiatorsSlide() {
               >
                 <SpotlightCard
                   spotlightColor="rgba(194, 194, 225, 0.2)"
-                  className="h-full w-full flex flex-col items-center justify-center text-center p-4 md:p-5 aspect-square"
+                  className="h-full w-full flex flex-col items-center justify-center text-center p-4 md:p-5 rounded-xl"
                 >
-                  <div className="w-10 h-10 rounded-full bg-white/[0.08] border border-[#C2C2E1]/20 flex items-center justify-center text-[#C2C2E1] flex-shrink-0 mb-3">
-                    <Check className="h-5 w-5" strokeWidth={2.5} />
+                  <div className="w-8 h-8 rounded-full bg-white/[0.08] border border-[#C2C2E1]/20 flex items-center justify-center text-[#C2C2E1] flex-shrink-0 mb-2 md:mb-3">
+                    <Check className="h-4 w-4" strokeWidth={2.5} />
                   </div>
-                  <p className="text-sm text-[#E0E0E0] leading-snug">
+                  <p className="text-xs md:text-sm text-[#E0E0E0] leading-relaxed">
                     {text}
                   </p>
                 </SpotlightCard>

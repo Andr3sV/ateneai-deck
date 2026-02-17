@@ -1208,9 +1208,11 @@ const MagicBento: React.FC<BentoProps> = ({
           }
           
           .card__content {
-            position: relative;
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
             z-index: 10;
-            margin-top: auto;
           }
           
           .card-icon svg {

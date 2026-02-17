@@ -39,16 +39,9 @@ export function CtaSlide() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-xl md:text-2xl lg:text-3xl font-light text-white leading-relaxed mb-14 md:mb-16"
         >
-          {t.quotePart1}{" "}
-          <span className="inline-block bg-gradient-to-r from-[#C2C2E1] to-white bg-clip-text text-transparent">
-            &lsquo;{t.quoteHighlight1}&rsquo;
-          </span>
+          {t.quotePart1}
           <br />
-          <span className="text-white">{t.quotePart2} </span>
-          <span className="inline-block bg-gradient-to-r from-[#C2C2E1] to-white bg-clip-text text-transparent">
-            &lsquo;{t.quoteHighlight2}&rsquo;
-          </span>
-          .
+          {t.quotePart2}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

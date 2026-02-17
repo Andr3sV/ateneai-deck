@@ -24,12 +24,12 @@ export function ReportsSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-sm md:text-base text-[#C2C2E1] mb-6 md:mb-8"
+          className="text-sm md:text-base text-[#C2C2E1]"
         >
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-nowrap gap-2 md:gap-3 justify-center w-full max-w-5xl overflow-x-auto pb-1">
+        <div className="flex flex-nowrap gap-2 md:gap-3 justify-center w-full max-w-5xl overflow-x-auto pb-1 mb-8 md:mb-12 mt-6 md:mt-8">
           {t.points.map((point, i) => (
             <motion.span
               key={i}
@@ -43,6 +43,28 @@ export function ReportsSlide() {
             </motion.span>
           ))}
         </div>
+
+        {/* Cards */}
+        {t.cards && t.cards.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl">
+            {t.cards.map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                className="bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 flex flex-col gap-3"
+              >
+                <h3 className="text-base md:text-lg font-semibold text-white">
+                  {card.title}
+                </h3>
+                <p className="text-sm md:text-base text-slate-400 leading-relaxed">
+                  {card.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

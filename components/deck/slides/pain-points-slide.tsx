@@ -65,20 +65,21 @@ export function PainPointsSlide() {
                   {t.withAteneAI}
                 </h3>
                 <ul className="space-y-4">
-                  {t.points.map((point, i) => {
-                    const solutions = language === "en"
-                      ? ["→ Full visibility & metrics", "→ unlimited brands", "→ Full visibility & metrics", "→ Full visibility & metrics", "→ Full visibility & metrics"]
-                      : ["→ Visibilidad completa y métricas", "→ marcas ilimitadas", "→ Visibilidad completa y métricas", "→ Visibilidad completa y métricas", "→ Visibilidad completa y métricas"];
-                    return (
-                      <li key={i} className="flex justify-between items-start gap-3 text-xs text-slate-300">
-                        <div className="flex gap-3">
-                          <span className="text-emerald-500 mt-0.5">✓</span>
-                          <span>{point}</span>
-                        </div>
-                        <span className="text-emerald-500 opacity-60">{solutions[i] || solutions[0]}</span>
+                  {t.withAteneAIPoints && t.withAteneAIPoints.length > 0 ? (
+                    t.withAteneAIPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-xs text-slate-300">
+                        <span className="text-emerald-500 mt-0.5">✓</span>
+                        <span>{point}</span>
                       </li>
-                    );
-                  })}
+                    ))
+                  ) : (
+                    t.points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-xs text-slate-300">
+                        <span className="text-emerald-500 mt-0.5">✓</span>
+                        <span>{point}</span>
+                      </li>
+                    ))
+                  )}
                 </ul>
               </div>
             </ElectricBorder>

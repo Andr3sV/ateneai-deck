@@ -83,12 +83,10 @@ export default async function ABMBrandPageRoute({
   if (process.env.NODE_ENV === "development" && !hasContent(lang, "abm", "mango")) {
     console.error(`[DEV] Missing mango ABM content for language: ${lang}`);
   }
-  
-  const content = getContent(lang, "abm", "mango");
 
   return (
     <Suspense fallback={fallback}>
-      <MangoABMPage language={lang} content={content} />
+      <MangoABMPage />
     </Suspense>
   );
 }

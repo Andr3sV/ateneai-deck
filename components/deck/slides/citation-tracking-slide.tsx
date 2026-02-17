@@ -47,15 +47,15 @@ export function CitationTrackingSlide() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="relative w-full max-w-4xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50"
+          className="flex justify-center w-full"
         >
-          <div className="bg-white/5 flex items-center justify-center relative">
+          <div className="relative w-full max-w-4xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 inline-block">
             <Image
               src="/citations.png"
               alt={t.imageAlt}
               width={1200}
               height={675}
-              className="w-full h-full object-contain"
+              className="w-full h-auto block"
               unoptimized
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -66,13 +66,24 @@ export function CitationTrackingSlide() {
                 }
               }}
             />
-            <div className="placeholder absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
+            <div className="placeholder absolute inset-0 flex items-center justify-center bg-white/5" style={{ display: 'none' }}>
               <p className="text-[#A0A0A0] text-sm text-center">
                 {t.imageAlt}
               </p>
             </div>
           </div>
         </motion.div>
+
+        {"belowImageText" in t && t.belowImageText && (
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-4 md:mt-6 text-base md:text-lg text-[#C2C2E1] font-light italic max-w-2xl"
+          >
+            {t.belowImageText}
+          </motion.p>
+        )}
       </div>
     </div>
   );

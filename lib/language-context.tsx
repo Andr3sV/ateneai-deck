@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 export type Language = "en" | "es";
 
@@ -13,13 +14,25 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 const STORAGE_KEY = "ateneai-deck-lang";
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+function langFromPathname(pathname: string | null): Language {
+  if (!pathname) return "en";
+  if (pathname.startsWith("/es")) return "es";
+  return "en";
+}
 
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const urlLang = langFromPathname(pathname);
+
+  const [language, setLanguageState] = useState<Language>(() => urlLang);
+
+  // Sincronizar con la URL: si entras en /es/... se muestra español
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY) as Language | null;
-    if (stored === "es" || stored === "en") setLanguageState(stored);
-  }, []);
+    setLanguageState(urlLang);
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = urlLang === "es" ? "es" : "en";
+    }
+  }, [urlLang]);
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);

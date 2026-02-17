@@ -55,6 +55,17 @@ export function CitationEvidenceSlide() {
             <p className="text-[#A0A0A0] text-sm text-center">{t.imageAlt}</p>
           </div>
         </motion.div>
+
+        {"belowImageText" in t && t.belowImageText && (
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-4 md:mt-6 text-base md:text-lg text-[#C2C2E1] font-light italic max-w-2xl text-center whitespace-pre-line"
+          >
+            {t.belowImageText}
+          </motion.p>
+        )}
       </div>
     </div>
   );

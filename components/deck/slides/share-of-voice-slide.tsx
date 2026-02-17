@@ -94,6 +94,17 @@ export function ShareOfVoiceSlide() {
             />
           </motion.div>
         </div>
+
+        {"belowImageText" in t && t.belowImageText && (
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-6 md:mt-8 text-base md:text-lg text-[#C2C2E1] font-light italic max-w-2xl"
+          >
+            {t.belowImageText}
+          </motion.p>
+        )}
       </div>
     </div>
   );

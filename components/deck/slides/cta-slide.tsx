@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
-
+import { useTranslations } from "@/lib/translations-context";
 export function CtaSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].cta;
 
   return (

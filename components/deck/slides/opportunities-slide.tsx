@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 
 export function OpportunitiesSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].opportunities;
 
   return (

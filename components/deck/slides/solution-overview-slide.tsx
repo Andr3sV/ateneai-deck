@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 
 const MagicBento = dynamic(() => import("@/components/ui/magic-bento"), {
   ssr: false,
@@ -11,6 +11,7 @@ const MagicBento = dynamic(() => import("@/components/ui/magic-bento"), {
 
 export function SolutionOverviewSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].solutionOverview;
 
   return (

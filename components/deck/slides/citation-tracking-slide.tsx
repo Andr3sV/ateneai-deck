@@ -3,10 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
+import { useMangoImageSrc } from "@/lib/mango-images-context";
 
 export function CitationTrackingSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
+  const imageSrc = useMangoImageSrc("/citations.png");
   const t = translations[language].citationTracking;
 
   return (
@@ -49,9 +52,11 @@ export function CitationTrackingSlide() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex justify-center w-full"
         >
-          <div className="relative w-full max-w-4xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 inline-block">
+          <div
+            className={`relative w-full rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 inline-block ${language === "es" ? "max-w-[44.8rem]" : "max-w-4xl"}`}
+          >
             <Image
-              src="/citations.png"
+              src={imageSrc}
               alt={t.imageAlt}
               width={1200}
               height={675}

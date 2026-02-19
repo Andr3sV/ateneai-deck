@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 import { FileText } from "lucide-react";
 
 export function ReportsSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].reports;
 
   return (
@@ -29,7 +30,7 @@ export function ReportsSlide() {
           {t.subtitle}
         </motion.p>
         
-        <div className="flex flex-nowrap gap-2 md:gap-3 justify-center w-full max-w-5xl overflow-x-auto pb-1 mb-8 md:mb-12 mt-6 md:mt-8">
+        <div className="flex flex-wrap gap-2 md:gap-3 justify-center w-full max-w-5xl mb-8 md:mb-12 mt-6 md:mt-8">
           {t.points.map((point, i) => (
             <motion.span
               key={i}

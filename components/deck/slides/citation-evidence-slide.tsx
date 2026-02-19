@@ -3,10 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
+import { useMangoImageSrc } from "@/lib/mango-images-context";
 
 export function CitationEvidenceSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
+  const imageSrc = useMangoImageSrc("/op.png");
   const t = translations[language].citationEvidence;
 
   return (
@@ -33,10 +36,10 @@ export function CitationEvidenceSlide() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-6 md:mt-8 relative w-full max-w-6xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 shadow-lg"
+          className="mt-6 md:mt-8 relative w-full max-w-[57.6rem] rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 shadow-lg"
         >
           <Image
-            src="/op.png"
+            src={imageSrc}
             alt={t.imageAlt}
             width={1200}
             height={675}

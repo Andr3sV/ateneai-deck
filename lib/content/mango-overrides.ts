@@ -1,12 +1,22 @@
 // Content overrides for Mango ABM page only
 // These override specific content without modifying global translations
 
-export const mangoABMOverrides = {
-  hero: {
+const heroByLang = {
+  en: {
     headline: "AI is becoming the first point of fashion brand evaluation.",
     subheadline: "How is Mango represented inside generative AI answers?",
-    cta: "Executive AI Visibility Briefing",
+    cta: "", // No CTA button on Mango home
   },
+  es: {
+    headline: "La IA ya decide qué marcas de moda se recomiendan",
+    subheadline: "¿Cómo aparece Mango — y cada una de sus líneas — en las respuestas que influyen en la compra?",
+    cta: "",
+  },
+} as const;
+
+export const mangoABMOverrides = {
+  heroByLang,
+  hero: heroByLang.en, // default/legacy
   contextShift: {
     headline: "Brand perception now forms before traffic exists.",
     subheadline: "AI answers influence consideration before mango.com is visited.",

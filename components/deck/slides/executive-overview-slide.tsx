@@ -3,10 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
+import { useMangoImageSrc } from "@/lib/mango-images-context";
 
 export function ExecutiveOverviewSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
+  const imageSrc = useMangoImageSrc("/images/dashboard/executive-overview.png");
   const t = translations[language].executiveOverview;
 
   return (
@@ -49,9 +52,9 @@ export function ExecutiveOverviewSlide() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex justify-center w-full"
         >
-          <div className="relative w-full max-w-4xl rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 inline-block">
+          <div className="relative w-full max-w-[39.2rem] rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 inline-block">
             <Image
-              src="/images/dashboard/executive-overview.png"
+              src={imageSrc}
               alt={t.imageAlt}
               width={1200}
               height={675}

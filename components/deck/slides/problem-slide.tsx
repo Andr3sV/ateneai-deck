@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export function ProblemSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].problem;
   const stats = translations[language].stats;
   const title = t.title;
@@ -87,6 +88,17 @@ export function ProblemSlide() {
               </motion.div>
             ))}
           </div>
+
+          {"belowStats" in t && (t as { belowStats?: string }).belowStats && (
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="mt-4 md:mt-5 text-base md:text-lg text-[#C2C2E1] font-light italic text-center"
+            >
+              {(t as { belowStats: string }).belowStats}
+            </motion.p>
+          )}
         </div>
       </div>
     </div>

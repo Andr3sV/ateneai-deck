@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 import { ElectricBorder } from "@/components/ui/electric-border";
 
 export function PainPointsSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].painPoints;
 
   return (

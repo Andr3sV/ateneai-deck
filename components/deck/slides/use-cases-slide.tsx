@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 import { Users, Target, TrendingUp, Search } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
@@ -10,6 +10,7 @@ const icons = [Users, Target, TrendingUp, Search];
 
 export function UseCasesSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].useCases;
 
   return (

@@ -6,7 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { LanguageSelector } from "@/components/ui/language-selector";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 
 const LightRays = dynamic(() => import("@/components/ui/light-rays"), {
   ssr: false,
@@ -14,6 +14,7 @@ const LightRays = dynamic(() => import("@/components/ui/light-rays"), {
 
 export function HeroSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const brands = translations[language].hero.brands;
   const tagline = translations[language].hero.tagline;
   const [currentBrandIndex, setCurrentBrandIndex] = useState(0);

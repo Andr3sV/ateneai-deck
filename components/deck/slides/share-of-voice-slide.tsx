@@ -3,10 +3,14 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
+import { useMangoImageSrc } from "@/lib/mango-images-context";
 
 export function ShareOfVoiceSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
+  const batSrc = useMangoImageSrc("/bat.png");
+  const bat2Src = useMangoImageSrc("/bat2.png");
   const t = translations[language].shareOfVoice;
 
   return (
@@ -50,10 +54,10 @@ export function ShareOfVoiceSlide() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="relative w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
+            className="relative w-full h-64 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5"
           >
             <Image
-              src="/bat.png"
+              src={batSrc}
               alt="Market Positioning Matrix"
               fill
               className="object-cover"
@@ -79,10 +83,10 @@ export function ShareOfVoiceSlide() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="relative w-full h-56 sm:h-64 md:h-72 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white"
+            className="relative w-full h-64 rounded-2xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white"
           >
             <Image
-              src="/bat2.png"
+              src={bat2Src}
               alt="Mentions Evolution"
               fill
               className="object-contain"

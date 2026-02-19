@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
 import { Check } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 export function CompetitiveDifferentiatorsSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
   const t = translations[language].competitiveDifferentiators;
 
   return (

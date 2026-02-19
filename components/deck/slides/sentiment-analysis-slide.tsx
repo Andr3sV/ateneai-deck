@@ -3,10 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
-import { translations } from "@/lib/translations";
+import { useTranslations } from "@/lib/translations-context";
+import { useMangoImageSrc } from "@/lib/mango-images-context";
 
 export function SentimentAnalysisSlide() {
   const { language } = useLanguage();
+  const translations = useTranslations();
+  const imageSrc = useMangoImageSrc("/images/dashboard/sentiment-analysis.png");
   const t = translations[language].sentimentAnalysis;
 
   return (
@@ -51,7 +54,7 @@ export function SentimentAnalysisSlide() {
         >
           <div className="relative w-full max-w-3xl rounded-xl overflow-hidden border-2 border-[#C2C2E1]/50 bg-white/5 inline-block">
             <Image
-              src="/images/dashboard/sentiment-analysis.png"
+              src={imageSrc}
               alt={t.imageAlt}
               width={1200}
               height={675}

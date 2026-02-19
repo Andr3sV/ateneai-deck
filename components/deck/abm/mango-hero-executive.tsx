@@ -64,18 +64,20 @@ export function MangoHeroExecutive({ headline, subheadline, cta }: MangoHeroExec
           {subheadline}
         </motion.p>
 
-        {/* CTA */}
-        <motion.a
-          href="https://www.ateneai.com/demo"
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="px-10 py-4 bg-[#C2C2E1] text-black rounded-md hover:bg-[#C2C2E1]/90 transition-colors text-lg font-medium w-fit"
-        >
-          {cta}
-        </motion.a>
+        {/* CTA (solo si hay texto) */}
+        {cta ? (
+          <motion.a
+            href="https://www.ateneai.com/demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="px-10 py-4 bg-[#C2C2E1] text-black rounded-md hover:bg-[#C2C2E1]/90 transition-colors text-lg font-medium w-fit"
+          >
+            {cta}
+          </motion.a>
+        ) : null}
       </div>
     </div>
   );

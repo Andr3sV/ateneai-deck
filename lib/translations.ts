@@ -468,6 +468,7 @@ export const translations = {
         { value: "0%", title: "Visibilidad si no lo mides", description: "Lo que no se mide en IA, no existe." },
         { value: "∞", title: "Oportunidades invisibles", description: "Cada respuesta sin tu marca es una venta potencial perdida." },
       ],
+      belowStats: "En moda, la decisión se forma antes de entrar en la web.",
     },
     painPoints: {
       title: "El coste real de no monitorizar la IA",

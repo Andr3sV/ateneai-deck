@@ -23,4 +23,4 @@ Abre [http://localhost:3005](http://localhost:3005).
 - **Flecha izquierda**: anterior slide
 - Barra inferior: navegación, indicador de progreso (1/9) y controles (grid, zoom, full screen)
 
-No hay header ni footer; solo el contenido de cada slide y la barra de controles abajo. ..
+No hay header ni footer; solo el contenido de cada slide y la barra de controles abajo. .
